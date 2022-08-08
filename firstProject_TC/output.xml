@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220808 16:25:35.781" rpa="false" schemaversion="3">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\HaroonD\.vscode\extensions\robocorp.robotframework-lsp-0.49.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test" line="5">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="GET On Session">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>/students</arg>
+<msg timestamp="20220808 16:25:36.597" level="FAIL">No keyword with name 'GET On Session' found.</msg>
+<status status="FAIL" starttime="20220808 16:25:36.596" endtime="20220808 16:25:36.597"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220808 16:25:36.598" endtime="20220808 16:25:36.598"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220808 16:25:36.598" endtime="20220808 16:25:36.598"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20220808 16:25:36.598" endtime="20220808 16:25:36.598"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" starttime="20220808 16:25:36.598" endtime="20220808 16:25:36.598"/>
+</kw>
+<status status="PASS" starttime="20220808 16:25:35.822" endtime="20220808 16:25:38.756"/>
+</kw>
+<status status="PASS" starttime="20220808 16:25:35.820" endtime="20220808 16:25:38.757"/>
+</test>
+<status status="PASS" starttime="20220808 16:25:35.786" endtime="20220808 16:25:38.758"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
