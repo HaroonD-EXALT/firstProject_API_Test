@@ -97,3 +97,4 @@ DELETE Course By ID (delete) Invalid ID
 
     Status Should Be    BAD REQUEST    ${resp}
     Should Be Equal As Strings    Bad Request    ${resp.json()}[error]
+ 
