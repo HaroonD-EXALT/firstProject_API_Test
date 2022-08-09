@@ -1,13 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220809 08:30:43.692" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220809 11:44:27.927" rpa="false" schemaversion="3">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\HaroonD\.vscode\extensions\robocorp.robotframework-lsp-0.49.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test" line="5">
 <kw name="Interpreter Main Loop" library="MainLoop">
-<status status="PASS" starttime="20220809 08:30:43.802" endtime="20220809 08:31:05.390"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${admin1_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20220809 11:44:29.753" level="FAIL">Variable '${admin1_id}' not found.</msg>
+<status status="FAIL" starttime="20220809 11:44:29.748" endtime="20220809 11:44:29.753"/>
 </kw>
-<status status="PASS" starttime="20220809 08:30:43.801" endtime="20220809 08:31:05.391"/>
+<kw name="GET">
+<var>${resp}</var>
+<arg>${base_url}/admins/${admin1_id}</arg>
+<status status="NOT RUN" starttime="20220809 11:44:29.755" endtime="20220809 11:44:29.755"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${res_body}</var>
+<arg>id=${resp.json()}[id]</arg>
+<arg>name=${resp.json()}[name]</arg>
+<arg>password=${resp.json()}[password]</arg>
+<arg>role=${resp.json()}[role]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220809 11:44:29.755" endtime="20220809 11:44:29.755"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${expected_data}</var>
+<arg>id=${admin1_id}</arg>
+<arg>name=admin 1</arg>
+<arg>password=admin1.1234</arg>
+<arg>role=admin</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220809 11:44:29.755" endtime="20220809 11:44:29.755"/>
+</kw>
+<kw name="Status Should Be">
+<arg>OK</arg>
+<arg>${resp}</arg>
+<status status="NOT RUN" starttime="20220809 11:44:29.759" endtime="20220809 11:44:29.759"/>
+</kw>
+<kw name="Dictionaries Should Be Equal">
+<arg>${res_body}</arg>
+<arg>${expected_data}</arg>
+<status status="NOT RUN" starttime="20220809 11:44:29.763" endtime="20220809 11:44:29.764"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=admin 1</arg>
+<arg>password=admin1.1234</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220809 11:48:26.547" level="INFO">${body} = {'name': 'admin 1', 'password': 'admin1.1234'}</msg>
+<status status="PASS" starttime="20220809 11:48:26.546" endtime="20220809 11:48:26.547"/>
+</kw>
+<kw name="POST">
+<var>${resp}</var>
+<arg>${base_url}/admins/create</arg>
+<arg>json=${body}</arg>
+<msg timestamp="20220809 11:48:26.550" level="FAIL">No keyword with name 'POST' found.</msg>
+<status status="FAIL" starttime="20220809 11:48:26.549" endtime="20220809 11:48:26.550"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${resp_data}</var>
+<arg>id=${resp.json()}[id]</arg>
+<arg>name=${resp.json()}[name]</arg>
+<arg>password=${resp.json()}[password]</arg>
+<arg>role=${resp.json()}[role]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.551" endtime="20220809 11:48:26.552"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${admin1_id}</var>
+<arg>${resp.json()}[id]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.553" endtime="20220809 11:48:26.553"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${admin1_id}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.553" endtime="20220809 11:48:26.554"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${admin1_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.554" endtime="20220809 11:48:26.554"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${exp_data}</var>
+<arg>id=${admin1_id}</arg>
+<arg>name=admin 1</arg>
+<arg>password=admin1.1234</arg>
+<arg>role=admin</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.555" endtime="20220809 11:48:26.555"/>
+</kw>
+<kw name="Status Should Be">
+<arg>OK</arg>
+<arg>${resp}</arg>
+<status status="NOT RUN" starttime="20220809 11:48:26.562" endtime="20220809 11:48:26.562"/>
+</kw>
+<kw name="Dictionaries Should Be Equal">
+<arg>${resp_data}</arg>
+<arg>${exp_data}</arg>
+<status status="NOT RUN" starttime="20220809 11:48:26.565" endtime="20220809 11:48:26.565"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=admin 2</arg>
+<arg>password=admin2.1234</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.566" endtime="20220809 11:48:26.567"/>
+</kw>
+<kw name="POST">
+<var>${resp}</var>
+<arg>${base_url}/admins/create</arg>
+<arg>json=${body}</arg>
+<status status="NOT RUN" starttime="20220809 11:48:26.572" endtime="20220809 11:48:26.572"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${resp_data}</var>
+<arg>id=${resp.json()}[id]</arg>
+<arg>name=${resp.json()}[name]</arg>
+<arg>password=${resp.json()}[password]</arg>
+<arg>role=${resp.json()}[role]</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.573" endtime="20220809 11:48:26.573"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${admin2_id}</var>
+<arg>${resp.json()}[id]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.573" endtime="20220809 11:48:26.573"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${admin2_id}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.574" endtime="20220809 11:48:26.574"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${admin2_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.574" endtime="20220809 11:48:26.574"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${exp_data}</var>
+<arg>id=${admin2_id}</arg>
+<arg>name=admin 2</arg>
+<arg>password=admin2.1234</arg>
+<arg>role=admin</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="NOT RUN" starttime="20220809 11:48:26.574" endtime="20220809 11:48:26.575"/>
+</kw>
+<kw name="Status Should Be">
+<arg>OK</arg>
+<arg>${resp}</arg>
+<status status="NOT RUN" starttime="20220809 11:48:26.579" endtime="20220809 11:48:26.579"/>
+</kw>
+<kw name="Dictionaries Should Be Equal">
+<arg>${resp_data}</arg>
+<arg>${exp_data}</arg>
+<status status="NOT RUN" starttime="20220809 11:48:26.581" endtime="20220809 11:48:26.581"/>
+</kw>
+<status status="PASS" starttime="20220809 11:44:27.989" endtime="20220809 12:08:26.240"/>
+</kw>
+<status status="PASS" starttime="20220809 11:44:27.987" endtime="20220809 12:08:26.241"/>
 </test>
-<status status="PASS" starttime="20220809 08:30:43.695" endtime="20220809 08:31:05.393"/>
+<status status="PASS" starttime="20220809 11:44:27.930" endtime="20220809 12:08:26.243"/>
 </suite>
 <statistics>
 <total>
