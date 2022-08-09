@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220809 16:21:39.242" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220809 16:41:30.169" rpa="false" schemaversion="3">
 <suite id="s1" name="Firstproject Tc" source="d:\projects\robot\firstProject_API_Test\firstproject_tc">
 <suite id="s1-s1" name="01 admin TC" source="d:\projects\robot\firstProject_API_Test\firstproject_tc\01_admin_TC.robot">
 <test id="s1-s1-t1" name="POST New Admin (POST)" line="16">
@@ -8,26 +8,26 @@
 <arg>name=admin 1</arg>
 <arg>password=admin1.1234</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:39.633" level="INFO">${body} = {'name': 'admin 1', 'password': 'admin1.1234'}</msg>
-<status status="PASS" starttime="20220809 16:21:39.633" endtime="20220809 16:21:39.648"/>
+<msg timestamp="20220809 16:41:30.683" level="INFO">${body} = {'name': 'admin 1', 'password': 'admin1.1234'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.683" endtime="20220809 16:41:30.701"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/admins/create</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:39.904" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.728" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
  path_url=/firstProject/api/admins/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '46', 'Content-Type': 'application/json'} 
  body=b'{"name": "admin 1", "password": "admin1.1234"}' 
  </msg>
-<msg timestamp="20220809 16:21:39.904" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.729" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body={"id":1,"name":"admin 1","role":"admin","password":"admin1.1234"} 
  </msg>
-<msg timestamp="20220809 16:21:39.904" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:39.649" endtime="20220809 16:21:39.904"/>
+<msg timestamp="20220809 16:41:30.729" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.702" endtime="20220809 16:41:30.729"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${resp_data}</var>
@@ -36,26 +36,26 @@
 <arg>password=${resp.json()}[password]</arg>
 <arg>role=${resp.json()}[role]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:39.907" level="INFO">${resp_data} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:39.905" endtime="20220809 16:21:39.907"/>
+<msg timestamp="20220809 16:41:30.734" level="INFO">${resp_data} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.729" endtime="20220809 16:41:30.734"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${admin1_id}</var>
 <arg>${resp.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:39.908" level="INFO">${admin1_id} = 1</msg>
-<status status="PASS" starttime="20220809 16:21:39.908" endtime="20220809 16:21:39.908"/>
+<msg timestamp="20220809 16:41:30.737" level="INFO">${admin1_id} = 1</msg>
+<status status="PASS" starttime="20220809 16:41:30.737" endtime="20220809 16:41:30.738"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${admin1_id}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220809 16:21:39.909" level="INFO">${admin1_id} = 1</msg>
-<status status="PASS" starttime="20220809 16:21:39.909" endtime="20220809 16:21:39.909"/>
+<msg timestamp="20220809 16:41:30.739" level="INFO">${admin1_id} = 1</msg>
+<status status="PASS" starttime="20220809 16:41:30.738" endtime="20220809 16:41:30.739"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${admin1_id}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 16:21:39.910" endtime="20220809 16:21:39.911"/>
+<status status="PASS" starttime="20220809 16:41:30.739" endtime="20220809 16:41:30.740"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${exp_data}</var>
@@ -64,46 +64,46 @@
 <arg>password=admin1.1234</arg>
 <arg>role=admin</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:39.912" level="INFO">${exp_data} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:39.911" endtime="20220809 16:21:39.912"/>
+<msg timestamp="20220809 16:41:30.740" level="INFO">${exp_data} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.740" endtime="20220809 16:41:30.741"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:39.913" endtime="20220809 16:21:39.914"/>
+<status status="PASS" starttime="20220809 16:41:30.741" endtime="20220809 16:41:30.741"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp_data}</arg>
 <arg>${exp_data}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:39.914" endtime="20220809 16:21:39.914"/>
+<status status="PASS" starttime="20220809 16:41:30.741" endtime="20220809 16:41:30.742"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>name=admin 2</arg>
 <arg>password=admin2.1234</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:39.915" level="INFO">${body} = {'name': 'admin 2', 'password': 'admin2.1234'}</msg>
-<status status="PASS" starttime="20220809 16:21:39.915" endtime="20220809 16:21:39.915"/>
+<msg timestamp="20220809 16:41:30.743" level="INFO">${body} = {'name': 'admin 2', 'password': 'admin2.1234'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.743" endtime="20220809 16:41:30.743"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/admins/create</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:39.941" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.762" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
  path_url=/firstProject/api/admins/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '46', 'Content-Type': 'application/json'} 
  body=b'{"name": "admin 2", "password": "admin2.1234"}' 
  </msg>
-<msg timestamp="20220809 16:21:39.941" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.762" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body={"id":2,"name":"admin 2","role":"admin","password":"admin2.1234"} 
  </msg>
-<msg timestamp="20220809 16:21:39.942" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:39.916" endtime="20220809 16:21:39.942"/>
+<msg timestamp="20220809 16:41:30.762" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.744" endtime="20220809 16:41:30.762"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${resp_data}</var>
@@ -112,26 +112,26 @@
 <arg>password=${resp.json()}[password]</arg>
 <arg>role=${resp.json()}[role]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:39.945" level="INFO">${resp_data} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:39.943" endtime="20220809 16:21:39.945"/>
+<msg timestamp="20220809 16:41:30.765" level="INFO">${resp_data} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.763" endtime="20220809 16:41:30.765"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${admin2_id}</var>
 <arg>${resp.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:39.948" level="INFO">${admin2_id} = 2</msg>
-<status status="PASS" starttime="20220809 16:21:39.946" endtime="20220809 16:21:39.948"/>
+<msg timestamp="20220809 16:41:30.766" level="INFO">${admin2_id} = 2</msg>
+<status status="PASS" starttime="20220809 16:41:30.765" endtime="20220809 16:41:30.766"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${admin2_id}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220809 16:21:39.949" level="INFO">${admin2_id} = 2</msg>
-<status status="PASS" starttime="20220809 16:21:39.949" endtime="20220809 16:21:39.949"/>
+<msg timestamp="20220809 16:41:30.767" level="INFO">${admin2_id} = 2</msg>
+<status status="PASS" starttime="20220809 16:41:30.766" endtime="20220809 16:41:30.767"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${admin2_id}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 16:21:39.950" endtime="20220809 16:21:39.951"/>
+<status status="PASS" starttime="20220809 16:41:30.767" endtime="20220809 16:41:30.768"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${exp_data}</var>
@@ -140,41 +140,41 @@
 <arg>password=admin2.1234</arg>
 <arg>role=admin</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:39.952" level="INFO">${exp_data} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:39.951" endtime="20220809 16:21:39.952"/>
+<msg timestamp="20220809 16:41:30.770" level="INFO">${exp_data} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.768" endtime="20220809 16:41:30.770"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:39.953" endtime="20220809 16:21:39.953"/>
+<status status="PASS" starttime="20220809 16:41:30.771" endtime="20220809 16:41:30.771"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp_data}</arg>
 <arg>${exp_data}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:39.954" endtime="20220809 16:21:39.954"/>
+<status status="PASS" starttime="20220809 16:41:30.771" endtime="20220809 16:41:30.772"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:39.632" endtime="20220809 16:21:39.955"/>
+<status status="PASS" starttime="20220809 16:41:30.682" endtime="20220809 16:41:30.772"/>
 </test>
 <test id="s1-s1-t2" name="Get All Admins(GET)" line="50">
 <kw name="GET" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${base_url}/admins</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.001" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins 
+<msg timestamp="20220809 16:41:30.792" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins 
  path_url=/firstProject/api/admins 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.001" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins 
+<msg timestamp="20220809 16:41:30.792" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body=[{"id":1,"name":"admin 1","role":"admin","password":"admin1.1234"},{"id":2,"name":"admin 2","role":"admin","password":"admin2.1234"}] 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body=[{"id":2,"name":"admin 2","role":"admin","password":"admin2.1234"},{"id":1,"name":"admin 1","role":"admin","password":"admin1.1234"}] 
  </msg>
-<msg timestamp="20220809 16:21:40.001" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:39.958" endtime="20220809 16:21:40.001"/>
+<msg timestamp="20220809 16:41:30.792" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.773" endtime="20220809 16:41:30.792"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${exp_data_admin1}</var>
@@ -183,8 +183,8 @@
 <arg>password=admin1.1234</arg>
 <arg>role=admin</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.003" level="INFO">${exp_data_admin1} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.002" endtime="20220809 16:21:40.003"/>
+<msg timestamp="20220809 16:41:30.793" level="INFO">${exp_data_admin1} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.793" endtime="20220809 16:41:30.793"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${exp_data_admin2}</var>
@@ -193,77 +193,77 @@
 <arg>password=admin2.1234</arg>
 <arg>role=admin</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.004" level="INFO">${exp_data_admin2} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.003" endtime="20220809 16:21:40.004"/>
+<msg timestamp="20220809 16:41:30.794" level="INFO">${exp_data_admin2} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.794" endtime="20220809 16:41:30.795"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>@{expected_admin_list}</var>
 <arg>${exp_data_admin1}</arg>
 <arg>${exp_data_admin2}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 16:21:40.005" level="INFO">@{expected_admin_list} = [ {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'} | {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'} ]</msg>
-<status status="PASS" starttime="20220809 16:21:40.004" endtime="20220809 16:21:40.005"/>
+<msg timestamp="20220809 16:41:30.796" level="INFO">@{expected_admin_list} = [ {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'} | {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'} ]</msg>
+<status status="PASS" starttime="20220809 16:41:30.796" endtime="20220809 16:41:30.796"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>@{resp_list}</var>
 <arg>${response.content}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 16:21:40.008" level="INFO">@{resp_list} = [ [{"id":1,"name":"admin 1","role":"admin","password":"admin1.1234"},{"id":2,"name":"admin 2","role":"admin","password":"admin2.1234"}] ]</msg>
-<status status="PASS" starttime="20220809 16:21:40.006" endtime="20220809 16:21:40.008"/>
+<msg timestamp="20220809 16:41:30.798" level="INFO">@{resp_list} = [ [{"id":2,"name":"admin 2","role":"admin","password":"admin2.1234"},{"id":1,"name":"admin 1","role":"admin","password":"admin1.1234"}] ]</msg>
+<status status="PASS" starttime="20220809 16:41:30.797" endtime="20220809 16:41:30.798"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${resp_list}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 16:21:40.009" endtime="20220809 16:21:40.011"/>
+<status status="PASS" starttime="20220809 16:41:30.798" endtime="20220809 16:41:30.799"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:40.012" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20220809 16:21:40.011" endtime="20220809 16:21:40.013"/>
+<msg timestamp="20220809 16:41:30.800" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20220809 16:41:30.800" endtime="20220809 16:41:30.800"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.013" endtime="20220809 16:21:40.014"/>
+<status status="PASS" starttime="20220809 16:41:30.801" endtime="20220809 16:41:30.801"/>
 </kw>
-<kw name="Lists Should Be Equal" library="Collections">
+<kw name="List Should Contain Sub List" library="Collections">
 <arg>@{expected_admin_list}</arg>
 <arg>@{resp_list}</arg>
-<doc>Fails if given lists are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.014" endtime="20220809 16:21:40.014"/>
+<doc>Fails if not all of the elements in ``list2`` are found in ``list1``.</doc>
+<status status="PASS" starttime="20220809 16:41:30.802" endtime="20220809 16:41:30.803"/>
 </kw>
-<status status="PASS" starttime="20220809 16:21:39.956" endtime="20220809 16:21:40.015"/>
+<status status="PASS" starttime="20220809 16:41:30.773" endtime="20220809 16:41:30.804"/>
 </test>
 <test id="s1-s1-t3" name="Get Admin By ID(GET)" line="69">
 <kw name="Log To Console" library="BuiltIn">
 <arg>admin1_i</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 16:21:40.017" endtime="20220809 16:21:40.017"/>
+<status status="PASS" starttime="20220809 16:41:30.807" endtime="20220809 16:41:30.807"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${admin1_id}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 16:21:40.018" endtime="20220809 16:21:40.018"/>
+<status status="PASS" starttime="20220809 16:41:30.808" endtime="20220809 16:41:30.809"/>
 </kw>
 <kw name="GET" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/admins/${admin1_id}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.051" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:30.817" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins/1 
  path_url=/firstProject/api/admins/1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.051" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:30.818" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins/1 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body={"id":1,"name":"admin 1","role":"admin","password":"admin1.1234"} 
  </msg>
-<msg timestamp="20220809 16:21:40.051" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.019" endtime="20220809 16:21:40.051"/>
+<msg timestamp="20220809 16:41:30.818" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.809" endtime="20220809 16:41:30.818"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${res_body}</var>
@@ -272,8 +272,8 @@
 <arg>password=${resp.json()}[password]</arg>
 <arg>role=${resp.json()}[role]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.054" level="INFO">${res_body} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.052" endtime="20220809 16:21:40.054"/>
+<msg timestamp="20220809 16:41:30.823" level="INFO">${res_body} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.820" endtime="20220809 16:41:30.823"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${expected_data}</var>
@@ -282,23 +282,23 @@
 <arg>password=admin1.1234</arg>
 <arg>role=admin</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.055" level="INFO">${expected_data} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.055" endtime="20220809 16:21:40.055"/>
+<msg timestamp="20220809 16:41:30.824" level="INFO">${expected_data} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.824" endtime="20220809 16:41:30.825"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.056" endtime="20220809 16:21:40.057"/>
+<status status="PASS" starttime="20220809 16:41:30.825" endtime="20220809 16:41:30.825"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${res_body}</arg>
 <arg>${expected_data}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.057" endtime="20220809 16:21:40.058"/>
+<status status="PASS" starttime="20220809 16:41:30.826" endtime="20220809 16:41:30.827"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:40.016" endtime="20220809 16:21:40.058"/>
+<status status="PASS" starttime="20220809 16:41:30.805" endtime="20220809 16:41:30.828"/>
 </test>
 <test id="s1-s1-t4" name="@Get Admin By Id (GET) wrongId" line="92">
 <kw name="GET" library="RequestsLibrary">
@@ -306,47 +306,47 @@
 <arg>${base_url}/admins/-1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.069" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins/-1 
+<msg timestamp="20220809 16:41:30.840" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins/-1 
  path_url=/firstProject/api/admins/-1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.069" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins/-1 
+<msg timestamp="20220809 16:41:30.840" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins/-1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '47', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '47', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=something wrong admin not found try again later 
  </msg>
-<msg timestamp="20220809 16:21:40.069" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.060" endtime="20220809 16:21:40.069"/>
+<msg timestamp="20220809 16:41:30.840" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.830" endtime="20220809 16:41:30.840"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.070" endtime="20220809 16:21:40.071"/>
+<status status="PASS" starttime="20220809 16:41:30.842" endtime="20220809 16:41:30.842"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_str}</var>
 <arg>${resp.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:40.072" level="INFO">${res_str} = something wrong admin not found try again later</msg>
-<status status="PASS" starttime="20220809 16:21:40.071" endtime="20220809 16:21:40.072"/>
+<msg timestamp="20220809 16:41:30.843" level="INFO">${res_str} = something wrong admin not found try again later</msg>
+<status status="PASS" starttime="20220809 16:41:30.843" endtime="20220809 16:41:30.844"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${expected_str}</var>
 <arg>something wrong admin not found try again later</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:40.074" level="INFO">${expected_str} = something wrong admin not found try again later</msg>
-<status status="PASS" starttime="20220809 16:21:40.074" endtime="20220809 16:21:40.075"/>
+<msg timestamp="20220809 16:41:30.844" level="INFO">${expected_str} = something wrong admin not found try again later</msg>
+<status status="PASS" starttime="20220809 16:41:30.844" endtime="20220809 16:41:30.845"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${res_str}</arg>
 <arg>${expected_str}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.076" endtime="20220809 16:21:40.077"/>
+<status status="PASS" starttime="20220809 16:41:30.845" endtime="20220809 16:41:30.845"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:40.059" endtime="20220809 16:21:40.077"/>
+<status status="PASS" starttime="20220809 16:41:30.829" endtime="20220809 16:41:30.846"/>
 </test>
 <test id="s1-s1-t5" name="@Get Admin By Id (GET) InValid ID" line="101">
 <kw name="GET" library="RequestsLibrary">
@@ -354,33 +354,33 @@
 <arg>${base_url}/admins/invalidId</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.112" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins/invalidId 
+<msg timestamp="20220809 16:41:30.858" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/admins/invalidId 
  path_url=/firstProject/api/admins/invalidId 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.112" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins/invalidId 
+<msg timestamp="20220809 16:41:30.858" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/admins/invalidId 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:40.097+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/admins/invalidId"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:30.856+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/admins/invalidId"} 
  </msg>
-<msg timestamp="20220809 16:21:40.113" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.079" endtime="20220809 16:21:40.113"/>
+<msg timestamp="20220809 16:41:30.858" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.847" endtime="20220809 16:41:30.858"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.113" endtime="20220809 16:21:40.113"/>
+<status status="PASS" starttime="20220809 16:41:30.860" endtime="20220809 16:41:30.860"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:40.113" endtime="20220809 16:21:40.115"/>
+<status status="PASS" starttime="20220809 16:41:30.861" endtime="20220809 16:41:30.862"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:40.079" endtime="20220809 16:21:40.116"/>
+<status status="PASS" starttime="20220809 16:41:30.847" endtime="20220809 16:41:30.862"/>
 </test>
 <test id="s1-s1-t6" name="POST New Admin (POST) Expect an error (without name)" line="111">
 <kw name="Create Dictionary" library="BuiltIn">
@@ -388,8 +388,8 @@
 <arg>name=</arg>
 <arg>password=admin1.1234</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.118" level="INFO">${body} = {'name': '', 'password': 'admin1.1234'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.117" endtime="20220809 16:21:40.118"/>
+<msg timestamp="20220809 16:41:30.864" level="INFO">${body} = {'name': '', 'password': 'admin1.1234'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.863" endtime="20220809 16:41:30.864"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
@@ -397,33 +397,33 @@
 <arg>json=${body}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.137" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.873" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
  path_url=/firstProject/api/admins/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '39', 'Content-Type': 'application/json'} 
  body=b'{"name": "", "password": "admin1.1234"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.137" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.874" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:40.135+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/admins/create"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:30.872+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/admins/create"} 
  </msg>
-<msg timestamp="20220809 16:21:40.137" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.118" endtime="20220809 16:21:40.138"/>
+<msg timestamp="20220809 16:41:30.874" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.864" endtime="20220809 16:41:30.874"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.139" endtime="20220809 16:21:40.140"/>
+<status status="PASS" starttime="20220809 16:41:30.874" endtime="20220809 16:41:30.874"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:40.142" endtime="20220809 16:21:40.145"/>
+<status status="PASS" starttime="20220809 16:41:30.876" endtime="20220809 16:41:30.876"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.117" endtime="20220809 16:21:40.145"/>
+<status status="PASS" starttime="20220809 16:41:30.863" endtime="20220809 16:41:30.876"/>
 </test>
 <test id="s1-s1-t7" name="POST New Admin (POST) Expect an error (without password)" line="119">
 <kw name="Create Dictionary" library="BuiltIn">
@@ -431,8 +431,8 @@
 <arg>name=Test</arg>
 <arg>password=</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.148" level="INFO">${body} = {'name': 'Test', 'password': ''}</msg>
-<status status="PASS" starttime="20220809 16:21:40.148" endtime="20220809 16:21:40.148"/>
+<msg timestamp="20220809 16:41:30.878" level="INFO">${body} = {'name': 'Test', 'password': ''}</msg>
+<status status="PASS" starttime="20220809 16:41:30.878" endtime="20220809 16:41:30.878"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
@@ -440,33 +440,33 @@
 <arg>json=${body}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.165" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.887" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/create 
  path_url=/firstProject/api/admins/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '32', 'Content-Type': 'application/json'} 
  body=b'{"name": "Test", "password": ""}' 
  </msg>
-<msg timestamp="20220809 16:21:40.165" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
+<msg timestamp="20220809 16:41:30.887" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/create 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:40.162+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/admins/create"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:30.885+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/admins/create"} 
  </msg>
-<msg timestamp="20220809 16:21:40.165" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.150" endtime="20220809 16:21:40.165"/>
+<msg timestamp="20220809 16:41:30.888" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.880" endtime="20220809 16:41:30.888"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.166" endtime="20220809 16:21:40.167"/>
+<status status="PASS" starttime="20220809 16:41:30.888" endtime="20220809 16:41:30.889"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:40.168" endtime="20220809 16:21:40.169"/>
+<status status="PASS" starttime="20220809 16:41:30.889" endtime="20220809 16:41:30.890"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.147" endtime="20220809 16:21:40.169"/>
+<status status="PASS" starttime="20220809 16:41:30.877" endtime="20220809 16:41:30.891"/>
 </test>
 <test id="s1-s1-t8" name="Login (POST)" line="128">
 <kw name="Create Dictionary" library="BuiltIn">
@@ -474,44 +474,44 @@
 <arg>username=admin 1</arg>
 <arg>password=admin1.1234</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.172" level="INFO">${body} = {'username': 'admin 1', 'password': 'admin1.1234'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.171" endtime="20220809 16:21:40.172"/>
+<msg timestamp="20220809 16:41:30.893" level="INFO">${body} = {'username': 'admin 1', 'password': 'admin1.1234'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.893" endtime="20220809 16:41:30.894"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/admins/login</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.214" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/login 
+<msg timestamp="20220809 16:41:30.910" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/login 
  path_url=/firstProject/api/admins/login 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '50', 'Content-Type': 'application/json'} 
  body=b'{"username": "admin 1", "password": "admin1.1234"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.214" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/login 
+<msg timestamp="20220809 16:41:30.910" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/login 
  status=200, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '16', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '16', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body=successful login 
  </msg>
-<msg timestamp="20220809 16:21:40.214" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.173" endtime="20220809 16:21:40.214"/>
+<msg timestamp="20220809 16:41:30.911" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.894" endtime="20220809 16:41:30.911"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.216" endtime="20220809 16:21:40.217"/>
+<status status="PASS" starttime="20220809 16:41:30.912" endtime="20220809 16:41:30.912"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>successful login</arg>
 <arg>${resp.content}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.219" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:30.913" level="INFO">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'bytes'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.217" endtime="20220809 16:21:40.220"/>
+<status status="PASS" starttime="20220809 16:41:30.913" endtime="20220809 16:41:30.913"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.170" endtime="20220809 16:21:40.221"/>
+<status status="PASS" starttime="20220809 16:41:30.893" endtime="20220809 16:41:30.914"/>
 </test>
 <test id="s1-s1-t9" name="Login (POST) Expect an error (wrong name)" line="137">
 <kw name="Create Dictionary" library="BuiltIn">
@@ -519,8 +519,8 @@
 <arg>username=Robot-Wrong Name</arg>
 <arg>password=robot.1234</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.228" level="INFO">${body} = {'username': 'Robot-Wrong Name', 'password': 'robot.1234'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.225" endtime="20220809 16:21:40.229"/>
+<msg timestamp="20220809 16:41:30.915" level="INFO">${body} = {'username': 'Robot-Wrong Name', 'password': 'robot.1234'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.915" endtime="20220809 16:41:30.915"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
@@ -528,36 +528,36 @@
 <arg>json=${body}</arg>
 <arg>expected_status=401</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.280" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/login 
+<msg timestamp="20220809 16:41:30.931" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/login 
  path_url=/firstProject/api/admins/login 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '58', 'Content-Type': 'application/json'} 
  body=b'{"username": "Robot-Wrong Name", "password": "robot.1234"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.280" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/login 
+<msg timestamp="20220809 16:41:30.931" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/login 
  status=401, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '34', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '34', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body=username or password is incorrect. 
  </msg>
-<msg timestamp="20220809 16:21:40.281" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.229" endtime="20220809 16:21:40.281"/>
+<msg timestamp="20220809 16:41:30.931" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.916" endtime="20220809 16:41:30.931"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>UNAUTHORIZED</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.282" endtime="20220809 16:21:40.282"/>
+<status status="PASS" starttime="20220809 16:41:30.932" endtime="20220809 16:41:30.932"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>username or password is incorrect.</arg>
 <arg>${resp.content}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.285" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:30.933" level="INFO">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'bytes'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.284" endtime="20220809 16:21:40.285"/>
+<status status="PASS" starttime="20220809 16:41:30.932" endtime="20220809 16:41:30.933"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.223" endtime="20220809 16:21:40.286"/>
+<status status="PASS" starttime="20220809 16:41:30.915" endtime="20220809 16:41:30.933"/>
 </test>
 <test id="s1-s1-t10" name="Login (POST) Expect an error (wrong password)" line="146">
 <kw name="Create Dictionary" library="BuiltIn">
@@ -565,8 +565,8 @@
 <arg>username=Robot-framework</arg>
 <arg>password=wrong password</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.290" level="INFO">${body} = {'username': 'Robot-framework', 'password': 'wrong password'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.289" endtime="20220809 16:21:40.290"/>
+<msg timestamp="20220809 16:41:30.937" level="INFO">${body} = {'username': 'Robot-framework', 'password': 'wrong password'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.935" endtime="20220809 16:41:30.937"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
@@ -574,54 +574,54 @@
 <arg>json=${body}</arg>
 <arg>expected_status=401</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.312" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/login 
+<msg timestamp="20220809 16:41:30.955" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/admins/login 
  path_url=/firstProject/api/admins/login 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '61', 'Content-Type': 'application/json'} 
  body=b'{"username": "Robot-framework", "password": "wrong password"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.312" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/login 
+<msg timestamp="20220809 16:41:30.956" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/admins/login 
  status=401, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '34', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '34', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body=username or password is incorrect. 
  </msg>
-<msg timestamp="20220809 16:21:40.312" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.292" endtime="20220809 16:21:40.313"/>
+<msg timestamp="20220809 16:41:30.958" level="INFO">${resp} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.938" endtime="20220809 16:41:30.959"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>UNAUTHORIZED</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.313" endtime="20220809 16:21:40.314"/>
+<status status="PASS" starttime="20220809 16:41:30.960" endtime="20220809 16:41:30.961"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>username or password is incorrect.</arg>
 <arg>${resp.content}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.316" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:30.963" level="INFO">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'bytes'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.315" endtime="20220809 16:21:40.316"/>
+<status status="PASS" starttime="20220809 16:41:30.962" endtime="20220809 16:41:30.963"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.288" endtime="20220809 16:21:40.317"/>
+<status status="PASS" starttime="20220809 16:41:30.935" endtime="20220809 16:41:30.963"/>
 </test>
 <test id="s1-s1-t11" name="Delete Admin 1 (Delete)" line="154">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/admins/${admin1_id}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.336" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:30.976" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/1 
  path_url=/firstProject/api/admins/1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.337" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:30.976" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/1 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body={"id":1,"name":"admin 1","role":"admin","password":"admin1.1234"} 
  </msg>
-<msg timestamp="20220809 16:21:40.337" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.319" endtime="20220809 16:21:40.337"/>
+<msg timestamp="20220809 16:41:30.976" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.965" endtime="20220809 16:41:30.976"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${exp_data_admin1}</var>
@@ -630,23 +630,23 @@
 <arg>password=admin1.1234</arg>
 <arg>role=admin</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.339" level="INFO">${exp_data_admin1} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.338" endtime="20220809 16:21:40.339"/>
+<msg timestamp="20220809 16:41:30.978" level="INFO">${exp_data_admin1} = {'id': 1, 'name': 'admin 1', 'password': 'admin1.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:30.977" endtime="20220809 16:41:30.978"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.341" endtime="20220809 16:21:40.342"/>
+<status status="PASS" starttime="20220809 16:41:30.978" endtime="20220809 16:41:30.979"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${exp_data_admin1}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.342" endtime="20220809 16:21:40.343"/>
+<status status="PASS" starttime="20220809 16:41:30.979" endtime="20220809 16:41:30.980"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:40.318" endtime="20220809 16:21:40.344"/>
+<status status="PASS" starttime="20220809 16:41:30.964" endtime="20220809 16:41:30.981"/>
 </test>
 <test id="s1-s1-t12" name="Delete Admin 1 already deleted (Delete)" line="165">
 <kw name="DELETE" library="RequestsLibrary">
@@ -654,53 +654,53 @@
 <arg>${base_url}/admins/${admin1_id}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.358" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:30.993" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/1 
  path_url=/firstProject/api/admins/1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.358" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:30.994" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '17', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '17', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=Admin not exists! 
  </msg>
-<msg timestamp="20220809 16:21:40.358" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.346" endtime="20220809 16:21:40.358"/>
+<msg timestamp="20220809 16:41:30.994" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.983" endtime="20220809 16:41:30.994"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.359" endtime="20220809 16:21:40.360"/>
+<status status="PASS" starttime="20220809 16:41:30.994" endtime="20220809 16:41:30.995"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Admin not exists!</arg>
 <arg>${resp.content}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.361" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:30.996" level="INFO">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'bytes'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.360" endtime="20220809 16:21:40.362"/>
+<status status="PASS" starttime="20220809 16:41:30.995" endtime="20220809 16:41:30.996"/>
 </kw>
-<status status="PASS" starttime="20220809 16:21:40.345" endtime="20220809 16:21:40.362"/>
+<status status="PASS" starttime="20220809 16:41:30.983" endtime="20220809 16:41:30.996"/>
 </test>
 <test id="s1-s1-t13" name="Delete Admin 2 (Delete)" line="172">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/admins/${admin2_id}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.387" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/2 
+<msg timestamp="20220809 16:41:31.010" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/2 
  path_url=/firstProject/api/admins/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.387" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/2 
+<msg timestamp="20220809 16:41:31.010" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/2 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
  body={"id":2,"name":"admin 2","role":"admin","password":"admin2.1234"} 
  </msg>
-<msg timestamp="20220809 16:21:40.387" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.365" endtime="20220809 16:21:40.387"/>
+<msg timestamp="20220809 16:41:31.011" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:30.999" endtime="20220809 16:41:31.011"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${exp_data_admin1}</var>
@@ -709,23 +709,23 @@
 <arg>password=admin2.1234</arg>
 <arg>role=admin</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.390" level="INFO">${exp_data_admin1} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.388" endtime="20220809 16:21:40.390"/>
+<msg timestamp="20220809 16:41:31.013" level="INFO">${exp_data_admin1} = {'id': 2, 'name': 'admin 2', 'password': 'admin2.1234', 'role': 'admin'}</msg>
+<status status="PASS" starttime="20220809 16:41:31.012" endtime="20220809 16:41:31.014"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.392" endtime="20220809 16:21:40.393"/>
+<status status="PASS" starttime="20220809 16:41:31.016" endtime="20220809 16:41:31.016"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${exp_data_admin1}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.393" endtime="20220809 16:21:40.394"/>
+<status status="PASS" starttime="20220809 16:41:31.017" endtime="20220809 16:41:31.017"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:40.364" endtime="20220809 16:21:40.394"/>
+<status status="PASS" starttime="20220809 16:41:30.998" endtime="20220809 16:41:31.019"/>
 </test>
 <test id="s1-s1-t14" name="Delete Admin 2 already deleted (Delete)" line="183">
 <kw name="DELETE" library="RequestsLibrary">
@@ -733,37 +733,37 @@
 <arg>${base_url}/admins/${admin1_id}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.415" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:31.039" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/admins/1 
  path_url=/firstProject/api/admins/1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.415" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/1 
+<msg timestamp="20220809 16:41:31.039" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/admins/1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '17', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '17', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=Admin not exists! 
  </msg>
-<msg timestamp="20220809 16:21:40.415" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.396" endtime="20220809 16:21:40.416"/>
+<msg timestamp="20220809 16:41:31.039" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.025" endtime="20220809 16:41:31.040"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.416" endtime="20220809 16:21:40.417"/>
+<status status="PASS" starttime="20220809 16:41:31.040" endtime="20220809 16:41:31.041"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Admin not exists!</arg>
 <arg>${resp.content}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.420" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:31.043" level="INFO">Argument types are:
 &lt;class 'str'&gt;
 &lt;class 'bytes'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.418" endtime="20220809 16:21:40.420"/>
+<status status="PASS" starttime="20220809 16:41:31.042" endtime="20220809 16:41:31.044"/>
 </kw>
-<status status="PASS" starttime="20220809 16:21:40.396" endtime="20220809 16:21:40.421"/>
+<status status="PASS" starttime="20220809 16:41:31.024" endtime="20220809 16:41:31.045"/>
 </test>
-<status status="PASS" starttime="20220809 16:21:39.276" endtime="20220809 16:21:40.428"/>
+<status status="PASS" starttime="20220809 16:41:30.206" endtime="20220809 16:41:31.047"/>
 </suite>
 <suite id="s1-s2" name="02 course TC" source="d:\projects\robot\firstProject_API_Test\firstproject_tc\02_course_TC.robot">
 <test id="s1-s2-t1" name="POST New Course (POST)" line="17">
@@ -771,180 +771,180 @@
 <var>${body}</var>
 <arg>name=${course1}[name]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.462" level="INFO">${body} = {'name': 'Aerospike from zero to hero'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.460" endtime="20220809 16:21:40.465"/>
+<msg timestamp="20220809 16:41:31.061" level="INFO">${body} = {'name': 'Aerospike from zero to hero'}</msg>
+<status status="PASS" starttime="20220809 16:41:31.060" endtime="20220809 16:41:31.061"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/create</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.503" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.086" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
  path_url=/firstProject/api/courses/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '39', 'Content-Type': 'application/json'} 
  body=b'{"name": "Aerospike from zero to hero"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.503" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.087" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"Aerospike from zero to hero","numOfStudent":0} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":2,"name":"Aerospike from zero to hero","numOfStudent":0} 
  </msg>
-<msg timestamp="20220809 16:21:40.504" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.465" endtime="20220809 16:21:40.504"/>
+<msg timestamp="20220809 16:41:31.087" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.062" endtime="20220809 16:41:31.087"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${course1_id}</var>
 <arg>${resp.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:40.510" level="INFO">${course1_id} = 1</msg>
-<status status="PASS" starttime="20220809 16:21:40.506" endtime="20220809 16:21:40.510"/>
+<msg timestamp="20220809 16:41:31.090" level="INFO">${course1_id} = 2</msg>
+<status status="PASS" starttime="20220809 16:41:31.089" endtime="20220809 16:41:31.090"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${course1_id}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220809 16:21:40.512" level="INFO">${course1_id} = 1</msg>
-<status status="PASS" starttime="20220809 16:21:40.511" endtime="20220809 16:21:40.512"/>
+<msg timestamp="20220809 16:41:31.091" level="INFO">${course1_id} = 2</msg>
+<status status="PASS" starttime="20220809 16:41:31.091" endtime="20220809 16:41:31.091"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${course1}</arg>
 <arg>id=${course1_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:40.512" endtime="20220809 16:21:40.513"/>
+<status status="PASS" starttime="20220809 16:41:31.092" endtime="20220809 16:41:31.092"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.514" endtime="20220809 16:21:40.514"/>
+<status status="PASS" starttime="20220809 16:41:31.093" endtime="20220809 16:41:31.093"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${course1}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.515" endtime="20220809 16:21:40.516"/>
+<status status="PASS" starttime="20220809 16:41:31.093" endtime="20220809 16:41:31.094"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>name=${course2}[name]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.517" level="INFO">${body} = {'name': 'Robot-framework from zero to hero'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.516" endtime="20220809 16:21:40.517"/>
+<msg timestamp="20220809 16:41:31.094" level="INFO">${body} = {'name': 'Robot-framework from zero to hero'}</msg>
+<status status="PASS" starttime="20220809 16:41:31.094" endtime="20220809 16:41:31.094"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/create</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.545" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.113" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
  path_url=/firstProject/api/courses/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '45', 'Content-Type': 'application/json'} 
  body=b'{"name": "Robot-framework from zero to hero"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.545" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.113" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":2,"name":"Robot-framework from zero to hero","numOfStudent":0} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":3,"name":"Robot-framework from zero to hero","numOfStudent":0} 
  </msg>
-<msg timestamp="20220809 16:21:40.546" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.518" endtime="20220809 16:21:40.546"/>
+<msg timestamp="20220809 16:41:31.113" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.094" endtime="20220809 16:41:31.113"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${course2_id}</var>
 <arg>${resp.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:40.548" level="INFO">${course2_id} = 2</msg>
-<status status="PASS" starttime="20220809 16:21:40.547" endtime="20220809 16:21:40.549"/>
+<msg timestamp="20220809 16:41:31.115" level="INFO">${course2_id} = 3</msg>
+<status status="PASS" starttime="20220809 16:41:31.114" endtime="20220809 16:41:31.115"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${course2_id}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220809 16:21:40.550" level="INFO">${course2_id} = 2</msg>
-<status status="PASS" starttime="20220809 16:21:40.549" endtime="20220809 16:21:40.551"/>
+<msg timestamp="20220809 16:41:31.117" level="INFO">${course2_id} = 3</msg>
+<status status="PASS" starttime="20220809 16:41:31.116" endtime="20220809 16:41:31.117"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${course2}</arg>
 <arg>id=${course2_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:40.554" endtime="20220809 16:21:40.555"/>
+<status status="PASS" starttime="20220809 16:41:31.117" endtime="20220809 16:41:31.118"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.569" endtime="20220809 16:21:40.570"/>
+<status status="PASS" starttime="20220809 16:41:31.118" endtime="20220809 16:41:31.118"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${course2}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.570" endtime="20220809 16:21:40.571"/>
+<status status="PASS" starttime="20220809 16:41:31.119" endtime="20220809 16:41:31.120"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>name=${course3}[name]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.577" level="INFO">${body} = {'name': 'Automation from zero to hero'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.576" endtime="20220809 16:21:40.577"/>
+<msg timestamp="20220809 16:41:31.122" level="INFO">${body} = {'name': 'Automation from zero to hero'}</msg>
+<status status="PASS" starttime="20220809 16:41:31.121" endtime="20220809 16:41:31.122"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/create</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.614" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.142" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
  path_url=/firstProject/api/courses/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '40', 'Content-Type': 'application/json'} 
  body=b'{"name": "Automation from zero to hero"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.615" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.142" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":3,"name":"Automation from zero to hero","numOfStudent":0} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":4,"name":"Automation from zero to hero","numOfStudent":0} 
  </msg>
-<msg timestamp="20220809 16:21:40.615" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.577" endtime="20220809 16:21:40.616"/>
+<msg timestamp="20220809 16:41:31.143" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.122" endtime="20220809 16:41:31.143"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${course3_id}</var>
 <arg>${resp.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:40.618" level="INFO">${course3_id} = 3</msg>
-<status status="PASS" starttime="20220809 16:21:40.617" endtime="20220809 16:21:40.618"/>
+<msg timestamp="20220809 16:41:31.145" level="INFO">${course3_id} = 4</msg>
+<status status="PASS" starttime="20220809 16:41:31.144" endtime="20220809 16:41:31.145"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${course3_id}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220809 16:21:40.620" level="INFO">${course3_id} = 3</msg>
-<status status="PASS" starttime="20220809 16:21:40.619" endtime="20220809 16:21:40.620"/>
+<msg timestamp="20220809 16:41:31.146" level="INFO">${course3_id} = 4</msg>
+<status status="PASS" starttime="20220809 16:41:31.145" endtime="20220809 16:41:31.146"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${course3}</arg>
 <arg>id=${course3_id}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:40.621" endtime="20220809 16:21:40.621"/>
+<status status="PASS" starttime="20220809 16:41:31.146" endtime="20220809 16:41:31.146"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.622" endtime="20220809 16:21:40.623"/>
+<status status="PASS" starttime="20220809 16:41:31.147" endtime="20220809 16:41:31.147"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${course3}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.624" endtime="20220809 16:21:40.627"/>
+<status status="PASS" starttime="20220809 16:41:31.147" endtime="20220809 16:41:31.148"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.455" endtime="20220809 16:21:40.628"/>
+<status status="PASS" starttime="20220809 16:41:31.059" endtime="20220809 16:41:31.148"/>
 </test>
 <test id="s1-s2-t2" name="POST New Course (POST) Expect an error (without name)" line="54">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>name=</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.630" level="INFO">${body} = {'name': ''}</msg>
-<status status="PASS" starttime="20220809 16:21:40.630" endtime="20220809 16:21:40.630"/>
+<msg timestamp="20220809 16:41:31.150" level="INFO">${body} = {'name': ''}</msg>
+<status status="PASS" starttime="20220809 16:41:31.150" endtime="20220809 16:41:31.150"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
@@ -952,40 +952,40 @@
 <arg>json=${body}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.648" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.159" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
  path_url=/firstProject/api/courses/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '12', 'Content-Type': 'application/json'} 
  body=b'{"name": ""}' 
  </msg>
-<msg timestamp="20220809 16:21:40.648" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.159" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:40.645+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/create"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:31.157+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/create"} 
  </msg>
-<msg timestamp="20220809 16:21:40.649" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.631" endtime="20220809 16:21:40.649"/>
+<msg timestamp="20220809 16:41:31.159" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.151" endtime="20220809 16:41:31.160"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.649" endtime="20220809 16:21:40.650"/>
+<status status="PASS" starttime="20220809 16:41:31.161" endtime="20220809 16:41:31.161"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:40.650" endtime="20220809 16:21:40.652"/>
+<status status="PASS" starttime="20220809 16:41:31.162" endtime="20220809 16:41:31.163"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.629" endtime="20220809 16:21:40.653"/>
+<status status="PASS" starttime="20220809 16:41:31.149" endtime="20220809 16:41:31.163"/>
 </test>
 <test id="s1-s2-t3" name="POST New Course (POST) Expect an error (without body)" line="63">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.658" level="INFO">${body} = {}</msg>
-<status status="PASS" starttime="20220809 16:21:40.657" endtime="20220809 16:21:40.658"/>
+<msg timestamp="20220809 16:41:31.165" level="INFO">${body} = {}</msg>
+<status status="PASS" starttime="20220809 16:41:31.165" endtime="20220809 16:41:31.165"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
@@ -993,88 +993,99 @@
 <arg>json=${body}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.672" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.173" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/courses/create 
  path_url=/firstProject/api/courses/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2', 'Content-Type': 'application/json'} 
  body=b'{}' 
  </msg>
-<msg timestamp="20220809 16:21:40.672" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
+<msg timestamp="20220809 16:41:31.174" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/courses/create 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:40.669+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/create"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:31.172+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/create"} 
  </msg>
-<msg timestamp="20220809 16:21:40.672" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.659" endtime="20220809 16:21:40.673"/>
+<msg timestamp="20220809 16:41:31.174" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.165" endtime="20220809 16:41:31.174"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.675" endtime="20220809 16:21:40.677"/>
+<status status="PASS" starttime="20220809 16:41:31.174" endtime="20220809 16:41:31.175"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:40.677" endtime="20220809 16:21:40.679"/>
+<status status="PASS" starttime="20220809 16:41:31.175" endtime="20220809 16:41:31.176"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.654" endtime="20220809 16:21:40.679"/>
+<status status="PASS" starttime="20220809 16:41:31.164" endtime="20220809 16:41:31.176"/>
 </test>
 <test id="s1-s2-t4" name="Get All Courses(GET)" line="72">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.709" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses 
+<msg timestamp="20220809 16:41:31.194" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses 
  path_url=/firstProject/api/courses 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.709" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses 
+<msg timestamp="20220809 16:41:31.194" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body=[{"id":2,"name":"Robot-framework from zero to hero","numOfStudent":0},{"id":3,"name":"Automation from zero to hero","numOfStudent":0},{"id":1,"name":"Aerospike from zero to hero","numOfStudent":0}] 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body=[{"id":3,"name":"Robot-framework from zero to hero","numOfStudent":0},{"id":1,"name":"Aerospike from zero to hero","numOfStudent":0},{"id":4,"name":"Automation from zero to hero","numOfStudent":0},{"id":2,"name":"Aerospike from zero to hero","numOfStudent":0}] 
  </msg>
-<msg timestamp="20220809 16:21:40.710" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.681" endtime="20220809 16:21:40.710"/>
+<msg timestamp="20220809 16:41:31.194" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.178" endtime="20220809 16:41:31.194"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${resp.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 16:21:40.711" endtime="20220809 16:21:40.712"/>
+<kw name="Create List" library="BuiltIn">
+<var>@{expected_cource_list}</var>
+<arg>${course1}</arg>
+<arg>${course2}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220809 16:41:31.200" level="INFO">@{expected_cource_list} = [ {'id': 2, 'name': 'Aerospike from zero to hero', 'numOfStudent': 0} | {'id': 3, 'name': 'Robot-framework from zero to hero', 'numOfStudent': 0} ]</msg>
+<status status="PASS" starttime="20220809 16:41:31.199" endtime="20220809 16:41:31.200"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
+<kw name="Create List" library="BuiltIn">
+<var>@{resp_list}</var>
 <arg>${resp.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220809 16:21:40.713" endtime="20220809 16:21:40.715"/>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220809 16:41:31.202" level="INFO">@{resp_list} = [ [{"id":3,"name":"Robot-framework from zero to hero","numOfStudent":0},{"id":1,"name":"Aerospike from zero to hero","numOfStudent":0},{"id":4,"name":"Automation from zero to hero","numOfStudent":0},{...</msg>
+<status status="PASS" starttime="20220809 16:41:31.201" endtime="20220809 16:41:31.202"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.715" endtime="20220809 16:21:40.716"/>
+<status status="PASS" starttime="20220809 16:41:31.203" endtime="20220809 16:41:31.203"/>
+</kw>
+<kw name="List Should Contain Sub List" library="Collections">
+<arg>@{expected_cource_list}</arg>
+<arg>@{resp_list}</arg>
+<doc>Fails if not all of the elements in ``list2`` are found in ``list1``.</doc>
+<status status="PASS" starttime="20220809 16:41:31.204" endtime="20220809 16:41:31.204"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:40.680" endtime="20220809 16:21:40.717"/>
+<status status="PASS" starttime="20220809 16:41:31.177" endtime="20220809 16:41:31.205"/>
 </test>
-<test id="s1-s2-t5" name="Get Course By Id (GET)" line="81">
+<test id="s1-s2-t5" name="Get Course By Id (GET)" line="84">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/${course1_id}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.738" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/1 
- path_url=/firstProject/api/courses/1 
+<msg timestamp="20220809 16:41:31.216" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/2 
+ path_url=/firstProject/api/courses/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.739" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/1 
+<msg timestamp="20220809 16:41:31.217" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/2 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"Aerospike from zero to hero","numOfStudent":0} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":2,"name":"Aerospike from zero to hero","numOfStudent":0} 
  </msg>
-<msg timestamp="20220809 16:21:40.739" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.721" endtime="20220809 16:21:40.740"/>
+<msg timestamp="20220809 16:41:31.217" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.207" endtime="20220809 16:41:31.217"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${res_body}</var>
@@ -1082,312 +1093,312 @@
 <arg>name=${resp.json()}[name]</arg>
 <arg>numOfStudent=${resp.json()}[numOfStudent]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.745" level="INFO">${res_body} = {'id': 1, 'name': 'Aerospike from zero to hero', 'numOfStudent': 0}</msg>
-<status status="PASS" starttime="20220809 16:21:40.742" endtime="20220809 16:21:40.746"/>
+<msg timestamp="20220809 16:41:31.221" level="INFO">${res_body} = {'id': 2, 'name': 'Aerospike from zero to hero', 'numOfStudent': 0}</msg>
+<status status="PASS" starttime="20220809 16:41:31.218" endtime="20220809 16:41:31.221"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.747" endtime="20220809 16:21:40.747"/>
+<status status="PASS" starttime="20220809 16:41:31.221" endtime="20220809 16:41:31.222"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${res_body}</arg>
 <arg>${course1}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.748" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:31.223" level="INFO">Argument types are:
 &lt;class 'robot.utils.dotdict.DotDict'&gt;
 &lt;class 'dict'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.748" endtime="20220809 16:21:40.749"/>
+<status status="PASS" starttime="20220809 16:41:31.222" endtime="20220809 16:41:31.223"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:40.720" endtime="20220809 16:21:40.750"/>
+<status status="PASS" starttime="20220809 16:41:31.206" endtime="20220809 16:41:31.223"/>
 </test>
-<test id="s1-s2-t6" name="@Get Course By Id (GET) InValid ID" line="94">
+<test id="s1-s2-t6" name="@Get Course By Id (GET) InValid ID" line="97">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/invalidId</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.769" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/invalidId 
+<msg timestamp="20220809 16:41:31.231" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/invalidId 
  path_url=/firstProject/api/courses/invalidId 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.769" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/invalidId 
+<msg timestamp="20220809 16:41:31.231" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/invalidId 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:40.766+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/invalidId"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:31.230+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/invalidId"} 
  </msg>
-<msg timestamp="20220809 16:21:40.769" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.752" endtime="20220809 16:21:40.769"/>
+<msg timestamp="20220809 16:41:31.232" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.225" endtime="20220809 16:41:31.232"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.770" endtime="20220809 16:21:40.771"/>
+<status status="PASS" starttime="20220809 16:41:31.233" endtime="20220809 16:41:31.233"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:40.776" endtime="20220809 16:21:40.778"/>
+<status status="PASS" starttime="20220809 16:41:31.233" endtime="20220809 16:41:31.235"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:40.751" endtime="20220809 16:21:40.779"/>
+<status status="PASS" starttime="20220809 16:41:31.224" endtime="20220809 16:41:31.235"/>
 </test>
-<test id="s1-s2-t7" name="@Get Course By Id (GET) wrongId" line="102">
+<test id="s1-s2-t7" name="@Get Course By Id (GET) wrongId" line="105">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/-1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:40.795" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/-1 
+<msg timestamp="20220809 16:41:31.247" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/-1 
  path_url=/firstProject/api/courses/-1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.795" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/-1 
+<msg timestamp="20220809 16:41:31.248" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/-1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '22', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '22', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=Course does not exist! 
  </msg>
-<msg timestamp="20220809 16:21:40.796" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.781" endtime="20220809 16:21:40.796"/>
+<msg timestamp="20220809 16:41:31.248" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.238" endtime="20220809 16:41:31.248"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_str}</var>
 <arg>${resp.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:40.801" level="INFO">${res_str} = Course does not exist!</msg>
-<status status="PASS" starttime="20220809 16:21:40.798" endtime="20220809 16:21:40.802"/>
+<msg timestamp="20220809 16:41:31.250" level="INFO">${res_str} = Course does not exist!</msg>
+<status status="PASS" starttime="20220809 16:41:31.249" endtime="20220809 16:41:31.250"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${expected_str}</var>
 <arg>Course does not exist!</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:40.803" level="INFO">${expected_str} = Course does not exist!</msg>
-<status status="PASS" starttime="20220809 16:21:40.802" endtime="20220809 16:21:40.803"/>
+<msg timestamp="20220809 16:41:31.251" level="INFO">${expected_str} = Course does not exist!</msg>
+<status status="PASS" starttime="20220809 16:41:31.251" endtime="20220809 16:41:31.251"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.804" endtime="20220809 16:21:40.804"/>
+<status status="PASS" starttime="20220809 16:41:31.251" endtime="20220809 16:41:31.252"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${expected_str}</arg>
 <arg>${res_str}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.805" endtime="20220809 16:21:40.806"/>
+<status status="PASS" starttime="20220809 16:41:31.253" endtime="20220809 16:41:31.254"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:40.780" endtime="20220809 16:21:40.807"/>
+<status status="PASS" starttime="20220809 16:41:31.236" endtime="20220809 16:41:31.254"/>
 </test>
-<test id="s1-s2-t8" name="DELETE Course (delete)" line="113">
+<test id="s1-s2-t8" name="DELETE Course (delete)" line="116">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/${course2_id}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.820" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/2 
- path_url=/firstProject/api/courses/2 
+<msg timestamp="20220809 16:41:31.273" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/3 
+ path_url=/firstProject/api/courses/3 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.820" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/2 
+<msg timestamp="20220809 16:41:31.274" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/3 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":2,"name":"Robot-framework from zero to hero","numOfStudent":0} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":3,"name":"Robot-framework from zero to hero","numOfStudent":0} 
  </msg>
-<msg timestamp="20220809 16:21:40.820" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.809" endtime="20220809 16:21:40.820"/>
+<msg timestamp="20220809 16:41:31.275" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.257" endtime="20220809 16:41:31.275"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.821" endtime="20220809 16:21:40.822"/>
+<status status="PASS" starttime="20220809 16:41:31.276" endtime="20220809 16:41:31.276"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${course2}</arg>
 <arg>${resp.json()}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.823" endtime="20220809 16:21:40.825"/>
+<status status="PASS" starttime="20220809 16:41:31.277" endtime="20220809 16:41:31.278"/>
 </kw>
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/${course3_id}</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.845" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/3 
- path_url=/firstProject/api/courses/3 
+<msg timestamp="20220809 16:41:31.295" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/4 
+ path_url=/firstProject/api/courses/4 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.845" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/3 
+<msg timestamp="20220809 16:41:31.295" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/4 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":3,"name":"Automation from zero to hero","numOfStudent":0} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":4,"name":"Automation from zero to hero","numOfStudent":0} 
  </msg>
-<msg timestamp="20220809 16:21:40.845" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.825" endtime="20220809 16:21:40.845"/>
+<msg timestamp="20220809 16:41:31.295" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.278" endtime="20220809 16:41:31.296"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.846" endtime="20220809 16:21:40.847"/>
+<status status="PASS" starttime="20220809 16:41:31.296" endtime="20220809 16:41:31.297"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${course3}</arg>
 <arg>${resp.json()}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:40.847" endtime="20220809 16:21:40.849"/>
+<status status="PASS" starttime="20220809 16:41:31.298" endtime="20220809 16:41:31.299"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:40.808" endtime="20220809 16:21:40.850"/>
+<status status="PASS" starttime="20220809 16:41:31.256" endtime="20220809 16:41:31.300"/>
 </test>
-<test id="s1-s2-t9" name="DELETE Course Already deleted (delete)" line="129">
+<test id="s1-s2-t9" name="DELETE Course Already deleted (delete)" line="132">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/${course2_id}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.867" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/2 
- path_url=/firstProject/api/courses/2 
+<msg timestamp="20220809 16:41:31.313" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/3 
+ path_url=/firstProject/api/courses/3 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.867" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/2 
+<msg timestamp="20220809 16:41:31.313" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/3 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '18', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '18', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=course not exists! 
  </msg>
-<msg timestamp="20220809 16:21:40.868" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.851" endtime="20220809 16:21:40.868"/>
+<msg timestamp="20220809 16:41:31.313" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.303" endtime="20220809 16:41:31.313"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.869" endtime="20220809 16:21:40.870"/>
+<status status="PASS" starttime="20220809 16:41:31.314" endtime="20220809 16:41:31.315"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${resp.content}</arg>
 <arg>course not exists!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.872" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:31.316" level="INFO">Argument types are:
 &lt;class 'bytes'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.870" endtime="20220809 16:21:40.872"/>
+<status status="PASS" starttime="20220809 16:41:31.315" endtime="20220809 16:41:31.316"/>
 </kw>
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/${course3_id}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.883" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/3 
- path_url=/firstProject/api/courses/3 
+<msg timestamp="20220809 16:41:31.328" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/4 
+ path_url=/firstProject/api/courses/4 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.883" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/3 
+<msg timestamp="20220809 16:41:31.328" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/4 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '18', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '18', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=course not exists! 
  </msg>
-<msg timestamp="20220809 16:21:40.883" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.873" endtime="20220809 16:21:40.884"/>
+<msg timestamp="20220809 16:41:31.328" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.316" endtime="20220809 16:41:31.328"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.885" endtime="20220809 16:21:40.886"/>
+<status status="PASS" starttime="20220809 16:41:31.329" endtime="20220809 16:41:31.329"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${resp.content}</arg>
 <arg>course not exists!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.887" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:31.330" level="INFO">Argument types are:
 &lt;class 'bytes'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.886" endtime="20220809 16:21:40.887"/>
+<status status="PASS" starttime="20220809 16:41:31.330" endtime="20220809 16:41:31.330"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:40.851" endtime="20220809 16:21:40.888"/>
+<status status="PASS" starttime="20220809 16:41:31.302" endtime="20220809 16:41:31.331"/>
 </test>
-<test id="s1-s2-t10" name="DELETE Course (delete) wrong id" line="145">
+<test id="s1-s2-t10" name="DELETE Course (delete) wrong id" line="148">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/-1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.901" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/-1 
+<msg timestamp="20220809 16:41:31.344" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/-1 
  path_url=/firstProject/api/courses/-1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.901" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/-1 
+<msg timestamp="20220809 16:41:31.344" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/-1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '18', 'Date': 'Tue, 09 Aug 2022 13:21:39 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '18', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=course not exists! 
  </msg>
-<msg timestamp="20220809 16:21:40.901" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.892" endtime="20220809 16:21:40.902"/>
+<msg timestamp="20220809 16:41:31.344" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.333" endtime="20220809 16:41:31.344"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.902" endtime="20220809 16:21:40.903"/>
+<status status="PASS" starttime="20220809 16:41:31.345" endtime="20220809 16:41:31.346"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${resp.content}</arg>
 <arg>course not exists!</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:40.906" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:31.347" level="INFO">Argument types are:
 &lt;class 'bytes'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.904" endtime="20220809 16:21:40.909"/>
+<status status="PASS" starttime="20220809 16:41:31.346" endtime="20220809 16:41:31.347"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:40.891" endtime="20220809 16:21:40.909"/>
+<status status="PASS" starttime="20220809 16:41:31.332" endtime="20220809 16:41:31.348"/>
 </test>
-<test id="s1-s2-t11" name="DELETE Course (delete) Invalid ID" line="153">
+<test id="s1-s2-t11" name="DELETE Course (delete) Invalid ID" line="156">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/courses/inavlid_Id</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:40.920" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/inavlid_Id 
+<msg timestamp="20220809 16:41:31.360" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/courses/inavlid_Id 
  path_url=/firstProject/api/courses/inavlid_Id 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:40.921" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/inavlid_Id 
+<msg timestamp="20220809 16:41:31.360" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/courses/inavlid_Id 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:40.917+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/inavlid_Id"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:31.358+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/courses/inavlid_Id"} 
  </msg>
-<msg timestamp="20220809 16:21:40.921" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.911" endtime="20220809 16:21:40.921"/>
+<msg timestamp="20220809 16:41:31.361" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.349" endtime="20220809 16:41:31.361"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:40.923" endtime="20220809 16:21:40.925"/>
+<status status="PASS" starttime="20220809 16:41:31.361" endtime="20220809 16:41:31.362"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:40.926" endtime="20220809 16:21:40.927"/>
+<status status="PASS" starttime="20220809 16:41:31.362" endtime="20220809 16:41:31.363"/>
 </kw>
-<status status="PASS" starttime="20220809 16:21:40.911" endtime="20220809 16:21:40.927"/>
+<status status="PASS" starttime="20220809 16:41:31.349" endtime="20220809 16:41:31.363"/>
 </test>
-<status status="PASS" starttime="20220809 16:21:40.430" endtime="20220809 16:21:40.929"/>
+<status status="PASS" starttime="20220809 16:41:31.049" endtime="20220809 16:41:31.364"/>
 </suite>
 <suite id="s1-s3" name="03 student TC" source="d:\projects\robot\firstProject_API_Test\firstproject_tc\03_student_TC.robot">
 <test id="s1-s3-t1" name="POST New Student (POST)" line="15">
@@ -1395,124 +1406,124 @@
 <var>${body}</var>
 <arg>name=${student1}[name]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:40.944" level="INFO">${body} = {'name': 'student 1'}</msg>
-<status status="PASS" starttime="20220809 16:21:40.943" endtime="20220809 16:21:40.944"/>
+<msg timestamp="20220809 16:41:31.374" level="INFO">${body} = {'name': 'student 1'}</msg>
+<status status="PASS" starttime="20220809 16:41:31.373" endtime="20220809 16:41:31.374"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/create</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:40.998" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/create 
+<msg timestamp="20220809 16:41:31.395" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/create 
  path_url=/firstProject/api/students/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '21', 'Content-Type': 'application/json'} 
  body=b'{"name": "student 1"}' 
  </msg>
-<msg timestamp="20220809 16:21:40.998" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/create 
+<msg timestamp="20220809 16:41:31.395" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/create 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"student 1","role":"student","regCourses":[]} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":3,"name":"student 1","role":"student","regCourses":[]} 
  </msg>
-<msg timestamp="20220809 16:21:40.998" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:40.945" endtime="20220809 16:21:40.998"/>
+<msg timestamp="20220809 16:41:31.395" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.375" endtime="20220809 16:41:31.395"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${student1_id}</var>
 <arg>${resp.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:41.001" level="INFO">${student1_id} = 1</msg>
-<status status="PASS" starttime="20220809 16:21:40.999" endtime="20220809 16:21:41.001"/>
+<msg timestamp="20220809 16:41:31.396" level="INFO">${student1_id} = 3</msg>
+<status status="PASS" starttime="20220809 16:41:31.395" endtime="20220809 16:41:31.396"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${student1_id}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220809 16:21:41.002" level="INFO">${student1_id} = 1</msg>
-<status status="PASS" starttime="20220809 16:21:41.002" endtime="20220809 16:21:41.002"/>
+<msg timestamp="20220809 16:41:31.397" level="INFO">${student1_id} = 3</msg>
+<status status="PASS" starttime="20220809 16:41:31.397" endtime="20220809 16:41:31.397"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${student1}</arg>
 <arg>id=${resp.json()}[id]</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:41.003" endtime="20220809 16:21:41.004"/>
+<status status="PASS" starttime="20220809 16:41:31.397" endtime="20220809 16:41:31.399"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.006" endtime="20220809 16:21:41.006"/>
+<status status="PASS" starttime="20220809 16:41:31.399" endtime="20220809 16:41:31.399"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${student1}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.006" endtime="20220809 16:21:41.007"/>
+<status status="PASS" starttime="20220809 16:41:31.400" endtime="20220809 16:41:31.400"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>name=${student2}[name]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:41.009" level="INFO">${body} = {'name': 'student 2'}</msg>
-<status status="PASS" starttime="20220809 16:21:41.008" endtime="20220809 16:21:41.009"/>
+<msg timestamp="20220809 16:41:31.401" level="INFO">${body} = {'name': 'student 2'}</msg>
+<status status="PASS" starttime="20220809 16:41:31.400" endtime="20220809 16:41:31.401"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/create</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:41.032" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/create 
+<msg timestamp="20220809 16:41:31.423" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/create 
  path_url=/firstProject/api/students/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '21', 'Content-Type': 'application/json'} 
  body=b'{"name": "student 2"}' 
  </msg>
-<msg timestamp="20220809 16:21:41.032" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/create 
+<msg timestamp="20220809 16:41:31.423" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/create 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":2,"name":"student 2","role":"student","regCourses":[]} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":4,"name":"student 2","role":"student","regCourses":[]} 
  </msg>
-<msg timestamp="20220809 16:21:41.032" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.010" endtime="20220809 16:21:41.032"/>
+<msg timestamp="20220809 16:41:31.424" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.402" endtime="20220809 16:41:31.424"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${student2_id}</var>
 <arg>${resp.json()}[id]</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:41.034" level="INFO">${student2_id} = 2</msg>
-<status status="PASS" starttime="20220809 16:21:41.033" endtime="20220809 16:21:41.034"/>
+<msg timestamp="20220809 16:41:31.426" level="INFO">${student2_id} = 4</msg>
+<status status="PASS" starttime="20220809 16:41:31.425" endtime="20220809 16:41:31.426"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${student2_id}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220809 16:21:41.035" level="INFO">${student2_id} = 2</msg>
-<status status="PASS" starttime="20220809 16:21:41.035" endtime="20220809 16:21:41.035"/>
+<msg timestamp="20220809 16:41:31.427" level="INFO">${student2_id} = 4</msg>
+<status status="PASS" starttime="20220809 16:41:31.427" endtime="20220809 16:41:31.428"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${student2}</arg>
 <arg>id=${resp.json()}[id]</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:41.037" endtime="20220809 16:21:41.040"/>
+<status status="PASS" starttime="20220809 16:41:31.428" endtime="20220809 16:41:31.429"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.041" endtime="20220809 16:21:41.042"/>
+<status status="PASS" starttime="20220809 16:41:31.430" endtime="20220809 16:41:31.430"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${student2}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.042" endtime="20220809 16:21:41.043"/>
+<status status="PASS" starttime="20220809 16:41:31.431" endtime="20220809 16:41:31.432"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:40.940" endtime="20220809 16:21:41.044"/>
+<status status="PASS" starttime="20220809 16:41:31.373" endtime="20220809 16:41:31.433"/>
 </test>
 <test id="s1-s3-t2" name="POST New Student (POST) Expect an error (without name)" line="40">
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
 <arg>name=</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:41.047" level="INFO">${body} = {'name': ''}</msg>
-<status status="PASS" starttime="20220809 16:21:41.047" endtime="20220809 16:21:41.047"/>
+<msg timestamp="20220809 16:41:31.438" level="INFO">${body} = {'name': ''}</msg>
+<status status="PASS" starttime="20220809 16:41:31.436" endtime="20220809 16:41:31.439"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
@@ -1520,107 +1531,107 @@
 <arg>json=${body}</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:41.063" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/create 
+<msg timestamp="20220809 16:41:31.448" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/create 
  path_url=/firstProject/api/students/create 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '12', 'Content-Type': 'application/json'} 
  body=b'{"name": ""}' 
  </msg>
-<msg timestamp="20220809 16:21:41.063" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/create 
+<msg timestamp="20220809 16:41:31.448" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/create 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:41.060+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/students/create"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:31.446+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/students/create"} 
  </msg>
-<msg timestamp="20220809 16:21:41.063" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.047" endtime="20220809 16:21:41.063"/>
+<msg timestamp="20220809 16:41:31.449" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.440" endtime="20220809 16:41:31.449"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.064" endtime="20220809 16:21:41.064"/>
+<status status="PASS" starttime="20220809 16:41:31.449" endtime="20220809 16:41:31.450"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:41.065" endtime="20220809 16:21:41.066"/>
+<status status="PASS" starttime="20220809 16:41:31.451" endtime="20220809 16:41:31.453"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:41.046" endtime="20220809 16:21:41.067"/>
+<status status="PASS" starttime="20220809 16:41:31.435" endtime="20220809 16:41:31.456"/>
 </test>
 <test id="s1-s3-t3" name="Get All Students(GET)" line="49">
 <kw name="GET" library="RequestsLibrary">
 <var>${response}</var>
 <arg>${base_url}/students/</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:41.090" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/ 
+<msg timestamp="20220809 16:41:31.481" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/ 
  path_url=/firstProject/api/students/ 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.091" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/ 
+<msg timestamp="20220809 16:41:31.482" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/ 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body=[{"id":2,"name":"student 2","role":"student","regCourses":[]},{"id":1,"name":"student 1","role":"student","regCourses":[]}] 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body=[{"id":2,"name":"student 2","role":"student","regCourses":[]},{"id":1,"name":"student 1","role":"student","regCourses":[]},{"id":4,"name":"student 2","role":"student","regCourses":[]},{"id":3,"name":"student 1","role":"student","regCourses":[]}] 
  </msg>
-<msg timestamp="20220809 16:21:41.092" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.068" endtime="20220809 16:21:41.092"/>
+<msg timestamp="20220809 16:41:31.482" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.461" endtime="20220809 16:41:31.482"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${response}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.094" endtime="20220809 16:21:41.096"/>
+<status status="PASS" starttime="20220809 16:41:31.482" endtime="20220809 16:41:31.483"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>@{expected_list}</var>
 <arg>${student1}</arg>
 <arg>${student2}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 16:21:41.097" level="INFO">@{expected_list} = [ {'id': 1, 'name': 'student 1', 'role': 'student', 'regCourses': []} | {'id': 2, 'name': 'student 2', 'role': 'student', 'regCourses': []} ]</msg>
-<status status="PASS" starttime="20220809 16:21:41.097" endtime="20220809 16:21:41.097"/>
+<msg timestamp="20220809 16:41:31.486" level="INFO">@{expected_list} = [ {'id': 3, 'name': 'student 1', 'role': 'student', 'regCourses': []} | {'id': 4, 'name': 'student 2', 'role': 'student', 'regCourses': []} ]</msg>
+<status status="PASS" starttime="20220809 16:41:31.484" endtime="20220809 16:41:31.486"/>
 </kw>
 <kw name="List Should Contain Sub List" library="Collections">
 <arg>${response.json()}</arg>
 <arg>${expected_list}</arg>
 <doc>Fails if not all of the elements in ``list2`` are found in ``list1``.</doc>
-<status status="PASS" starttime="20220809 16:21:41.097" endtime="20220809 16:21:41.099"/>
+<status status="PASS" starttime="20220809 16:41:31.487" endtime="20220809 16:41:31.490"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:41.068" endtime="20220809 16:21:41.100"/>
+<status status="PASS" starttime="20220809 16:41:31.459" endtime="20220809 16:41:31.491"/>
 </test>
 <test id="s1-s3-t4" name="Get Student By ID(GET)" line="61">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/${student1_id}</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:41.121" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/1 
- path_url=/firstProject/api/students/1 
+<msg timestamp="20220809 16:41:31.501" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/3 
+ path_url=/firstProject/api/students/3 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.121" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/1 
+<msg timestamp="20220809 16:41:31.501" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/3 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"student 1","role":"student","regCourses":[]} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":3,"name":"student 1","role":"student","regCourses":[]} 
  </msg>
-<msg timestamp="20220809 16:21:41.121" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.103" endtime="20220809 16:21:41.121"/>
+<msg timestamp="20220809 16:41:31.502" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.494" endtime="20220809 16:41:31.502"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.123" endtime="20220809 16:21:41.125"/>
+<status status="PASS" starttime="20220809 16:41:31.503" endtime="20220809 16:41:31.505"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${student1}</arg>
 <arg>${resp.json()}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.126" endtime="20220809 16:21:41.129"/>
+<status status="PASS" starttime="20220809 16:41:31.506" endtime="20220809 16:41:31.508"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:41.102" endtime="20220809 16:21:41.129"/>
+<status status="PASS" starttime="20220809 16:41:31.493" endtime="20220809 16:41:31.509"/>
 </test>
 <test id="s1-s3-t5" name="@Get Student By Id (GET) wrongId" line="73">
 <kw name="GET" library="RequestsLibrary">
@@ -1628,47 +1639,47 @@
 <arg>${base_url}/students/-1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:41.151" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/-1 
+<msg timestamp="20220809 16:41:31.519" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/-1 
  path_url=/firstProject/api/students/-1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.151" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/-1 
+<msg timestamp="20220809 16:41:31.519" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/-1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '55', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '55', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=something wrong Student dose not exists try again later 
  </msg>
-<msg timestamp="20220809 16:21:41.152" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.132" endtime="20220809 16:21:41.152"/>
+<msg timestamp="20220809 16:41:31.520" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.510" endtime="20220809 16:41:31.520"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_str}</var>
 <arg>${resp.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:41.154" level="INFO">${res_str} = something wrong Student dose not exists try again later</msg>
-<status status="PASS" starttime="20220809 16:21:41.152" endtime="20220809 16:21:41.154"/>
+<msg timestamp="20220809 16:41:31.524" level="INFO">${res_str} = something wrong Student dose not exists try again later</msg>
+<status status="PASS" starttime="20220809 16:41:31.521" endtime="20220809 16:41:31.524"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${expected_str}</var>
 <arg>something wrong Student dose not exists try again later</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:41.154" level="INFO">${expected_str} = something wrong Student dose not exists try again later</msg>
-<status status="PASS" starttime="20220809 16:21:41.154" endtime="20220809 16:21:41.154"/>
+<msg timestamp="20220809 16:41:31.525" level="INFO">${expected_str} = something wrong Student dose not exists try again later</msg>
+<status status="PASS" starttime="20220809 16:41:31.525" endtime="20220809 16:41:31.526"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.155" endtime="20220809 16:21:41.156"/>
+<status status="PASS" starttime="20220809 16:41:31.526" endtime="20220809 16:41:31.527"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${res_str}</arg>
 <arg>${expected_str}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.157" endtime="20220809 16:21:41.158"/>
+<status status="PASS" starttime="20220809 16:41:31.527" endtime="20220809 16:41:31.528"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:41.130" endtime="20220809 16:21:41.159"/>
+<status status="PASS" starttime="20220809 16:41:31.510" endtime="20220809 16:41:31.528"/>
 </test>
 <test id="s1-s3-t6" name="@Get Student By Id (GET) InValid ID" line="85">
 <kw name="GET" library="RequestsLibrary">
@@ -1676,279 +1687,270 @@
 <arg>${base_url}/students/invalidId</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:41.174" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/invalidId 
+<msg timestamp="20220809 16:41:31.538" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/students/invalidId 
  path_url=/firstProject/api/students/invalidId 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.175" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/invalidId 
+<msg timestamp="20220809 16:41:31.539" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/students/invalidId 
  status=400, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
- body={"timestamp":"2022-08-09T13:21:41.170+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/students/invalidId"} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
+ body={"timestamp":"2022-08-09T13:41:31.535+00:00","status":400,"error":"Bad Request","path":"/firstProject/api/students/invalidId"} 
  </msg>
-<msg timestamp="20220809 16:21:41.176" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.163" endtime="20220809 16:21:41.177"/>
+<msg timestamp="20220809 16:41:31.539" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.530" endtime="20220809 16:41:31.539"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.178" endtime="20220809 16:21:41.178"/>
+<status status="PASS" starttime="20220809 16:41:31.540" endtime="20220809 16:41:31.540"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>Bad Request</arg>
 <arg>${resp.json()}[error]</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20220809 16:21:41.178" endtime="20220809 16:21:41.179"/>
+<status status="PASS" starttime="20220809 16:41:31.541" endtime="20220809 16:41:31.541"/>
 </kw>
 <tag>get</tag>
-<status status="PASS" starttime="20220809 16:21:41.162" endtime="20220809 16:21:41.179"/>
+<status status="PASS" starttime="20220809 16:41:31.529" endtime="20220809 16:41:31.542"/>
 </test>
 <test id="s1-s3-t7" name="Register student to course" line="93">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp_course}</var>
 <arg>${base_url}/courses/${course1}[id]</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:41.195" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/1 
- path_url=/firstProject/api/courses/1 
+<msg timestamp="20220809 16:41:31.550" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/2 
+ path_url=/firstProject/api/courses/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.196" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/1 
+<msg timestamp="20220809 16:41:31.550" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/2 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"Aerospike from zero to hero","numOfStudent":0} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":2,"name":"Aerospike from zero to hero","numOfStudent":0} 
  </msg>
-<msg timestamp="20220809 16:21:41.196" level="INFO">${resp_course} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.182" endtime="20220809 16:21:41.196"/>
+<msg timestamp="20220809 16:41:31.550" level="INFO">${resp_course} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.544" endtime="20220809 16:41:31.550"/>
 </kw>
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/${student1_id}/courses/${course1}[id]</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:41.213" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/1/courses/1 
- path_url=/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.565" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/3/courses/2 
+ path_url=/firstProject/api/students/3/courses/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.213" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.565" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/3/courses/2 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"student 1","role":"student","regCourses":[{"id":1,"name":"Aerospike from zero to hero","numOfStudent":1}]} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":3,"name":"student 1","role":"student","regCourses":[{"id":2,"name":"Aerospike from zero to hero","numOfStudent":1}]} 
  </msg>
-<msg timestamp="20220809 16:21:41.213" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.197" endtime="20220809 16:21:41.213"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${res_body}</var>
-<arg>id=${resp_course.json()}[id]</arg>
-<arg>name=${resp_course.json()}[name]</arg>
-<arg>numOfStudent=${resp_course.json()}[numOfStudent]</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:41.217" level="INFO">${res_body} = {'id': 1, 'name': 'Aerospike from zero to hero', 'numOfStudent': 0}</msg>
-<status status="PASS" starttime="20220809 16:21:41.214" endtime="20220809 16:21:41.217"/>
+<msg timestamp="20220809 16:41:31.565" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.550" endtime="20220809 16:41:31.565"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${course1}</arg>
-<arg>numOfStudent=${${res_body}[numOfStudent]+1}</arg>
+<arg>numOfStudent=${${resp_course.json()}[numOfStudent]+1}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:41.217" endtime="20220809 16:21:41.219"/>
+<status status="PASS" starttime="20220809 16:41:31.566" endtime="20220809 16:41:31.567"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>@{reCourse_list}</var>
 <arg>${course1}</arg>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 16:21:41.221" level="INFO">@{reCourse_list} = [ {'id': 1, 'name': 'Aerospike from zero to hero', 'numOfStudent': 1} ]</msg>
-<status status="PASS" starttime="20220809 16:21:41.220" endtime="20220809 16:21:41.221"/>
+<msg timestamp="20220809 16:41:31.569" level="INFO">@{reCourse_list} = [ {'id': 2, 'name': 'Aerospike from zero to hero', 'numOfStudent': 1} ]</msg>
+<status status="PASS" starttime="20220809 16:41:31.568" endtime="20220809 16:41:31.570"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${student1}</arg>
 <arg>regCourses=@{reCourse_list}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:41.221" endtime="20220809 16:21:41.222"/>
+<status status="PASS" starttime="20220809 16:41:31.570" endtime="20220809 16:41:31.572"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.222" endtime="20220809 16:21:41.223"/>
+<status status="PASS" starttime="20220809 16:41:31.573" endtime="20220809 16:41:31.573"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${student1}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.225" endtime="20220809 16:21:41.226"/>
+<status status="PASS" starttime="20220809 16:41:31.573" endtime="20220809 16:41:31.575"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:41.181" endtime="20220809 16:21:41.227"/>
+<status status="PASS" starttime="20220809 16:41:31.544" endtime="20220809 16:41:31.575"/>
 </test>
-<test id="s1-s3-t8" name="Register student to course that already is registred" line="112">
+<test id="s1-s3-t8" name="Register student to course that already is registred" line="109">
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/${student1_id}/courses/${course1}[id]</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:41.249" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/1/courses/1 
- path_url=/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.585" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/3/courses/2 
+ path_url=/firstProject/api/students/3/courses/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.249" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.585" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/3/courses/2 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '32', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '32', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=the course is already registered 
  </msg>
-<msg timestamp="20220809 16:21:41.250" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.229" endtime="20220809 16:21:41.250"/>
+<msg timestamp="20220809 16:41:31.586" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.577" endtime="20220809 16:41:31.586"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.250" endtime="20220809 16:21:41.251"/>
+<status status="PASS" starttime="20220809 16:41:31.588" endtime="20220809 16:41:31.589"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${resp.content}</arg>
 <arg>the course is already registered</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:41.253" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:31.591" level="INFO">Argument types are:
 &lt;class 'bytes'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.252" endtime="20220809 16:21:41.253"/>
+<status status="PASS" starttime="20220809 16:41:31.590" endtime="20220809 16:41:31.591"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:41.228" endtime="20220809 16:21:41.253"/>
+<status status="PASS" starttime="20220809 16:41:31.576" endtime="20220809 16:41:31.591"/>
 </test>
-<test id="s1-s3-t9" name="Register student to course wrong student id" line="121">
+<test id="s1-s3-t9" name="Register student to course wrong student id" line="118">
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/-1/courses/1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:41.264" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
+<msg timestamp="20220809 16:41:31.598" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
  path_url=/firstProject/api/students/-1/courses/1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.264" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
+<msg timestamp="20220809 16:41:31.598" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '24', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '24', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=Student dose not exists! 
  </msg>
-<msg timestamp="20220809 16:21:41.264" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.256" endtime="20220809 16:21:41.265"/>
+<msg timestamp="20220809 16:41:31.599" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.593" endtime="20220809 16:41:31.599"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_str}</var>
 <arg>${resp.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:41.266" level="INFO">${res_str} = Student dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.265" endtime="20220809 16:21:41.267"/>
+<msg timestamp="20220809 16:41:31.600" level="INFO">${res_str} = Student dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.599" endtime="20220809 16:41:31.600"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${expected_str}</var>
 <arg>Student dose not exists!</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:41.267" level="INFO">${expected_str} = Student dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.267" endtime="20220809 16:21:41.267"/>
+<msg timestamp="20220809 16:41:31.600" level="INFO">${expected_str} = Student dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.600" endtime="20220809 16:41:31.601"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.268" endtime="20220809 16:21:41.268"/>
+<status status="PASS" starttime="20220809 16:41:31.601" endtime="20220809 16:41:31.601"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${res_str}</arg>
 <arg>${expected_str}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.269" endtime="20220809 16:21:41.269"/>
+<status status="PASS" starttime="20220809 16:41:31.602" endtime="20220809 16:41:31.602"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:41.255" endtime="20220809 16:21:41.270"/>
+<status status="PASS" starttime="20220809 16:41:31.592" endtime="20220809 16:41:31.603"/>
 </test>
-<test id="s1-s3-t10" name="Register student to course wrong course id" line="131">
+<test id="s1-s3-t10" name="Register student to course wrong course id" line="128">
 <kw name="POST" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/1/courses/-1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a POST request.</doc>
-<msg timestamp="20220809 16:21:41.282" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
+<msg timestamp="20220809 16:41:31.613" level="INFO">POST Request : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
  path_url=/firstProject/api/students/1/courses/-1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.282" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
+<msg timestamp="20220809 16:41:31.613" level="INFO">POST Response : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '23', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '23', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=Course dose not exists! 
  </msg>
-<msg timestamp="20220809 16:21:41.282" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.271" endtime="20220809 16:21:41.282"/>
+<msg timestamp="20220809 16:41:31.614" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.605" endtime="20220809 16:41:31.614"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_str}</var>
 <arg>${resp.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:41.284" level="INFO">${res_str} = Course dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.283" endtime="20220809 16:21:41.284"/>
+<msg timestamp="20220809 16:41:31.615" level="INFO">${res_str} = Course dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.614" endtime="20220809 16:41:31.615"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${expected_str}</var>
 <arg>Course dose not exists!</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:41.285" level="INFO">${expected_str} = Course dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.285" endtime="20220809 16:21:41.285"/>
+<msg timestamp="20220809 16:41:31.616" level="INFO">${expected_str} = Course dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.616" endtime="20220809 16:41:31.616"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.286" endtime="20220809 16:21:41.286"/>
+<status status="PASS" starttime="20220809 16:41:31.616" endtime="20220809 16:41:31.616"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${res_str}</arg>
 <arg>${expected_str}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.287" endtime="20220809 16:21:41.287"/>
+<status status="PASS" starttime="20220809 16:41:31.617" endtime="20220809 16:41:31.617"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:41.270" endtime="20220809 16:21:41.287"/>
+<status status="PASS" starttime="20220809 16:41:31.605" endtime="20220809 16:41:31.618"/>
 </test>
-<test id="s1-s3-t11" name="UnRegister student from course" line="141">
+<test id="s1-s3-t11" name="UnRegister student from course" line="138">
 <kw name="GET" library="RequestsLibrary">
 <var>${resp_course}</var>
 <arg>${base_url}/courses/${course1}[id]</arg>
 <doc>Sends a GET request.</doc>
-<msg timestamp="20220809 16:21:41.303" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/1 
- path_url=/firstProject/api/courses/1 
+<msg timestamp="20220809 16:41:31.628" level="INFO">GET Request : url=http://localhost:8080/firstProject/api/courses/2 
+ path_url=/firstProject/api/courses/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.303" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/1 
+<msg timestamp="20220809 16:41:31.629" level="INFO">GET Response : url=http://localhost:8080/firstProject/api/courses/2 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"Aerospike from zero to hero","numOfStudent":1} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":2,"name":"Aerospike from zero to hero","numOfStudent":1} 
  </msg>
-<msg timestamp="20220809 16:21:41.304" level="INFO">${resp_course} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.291" endtime="20220809 16:21:41.304"/>
+<msg timestamp="20220809 16:41:31.629" level="INFO">${resp_course} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.621" endtime="20220809 16:41:31.629"/>
 </kw>
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/${student1_id}/courses/${course1}[id]</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:41.319" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/1/courses/1 
- path_url=/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.647" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/3/courses/2 
+ path_url=/firstProject/api/students/3/courses/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.320" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.648" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/3/courses/2 
  status=200, reason= 
- headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
- body={"id":1,"name":"student 1","role":"student","regCourses":[]} 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"id":3,"name":"student 1","role":"student","regCourses":[]} 
  </msg>
-<msg timestamp="20220809 16:21:41.320" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.305" endtime="20220809 16:21:41.320"/>
+<msg timestamp="20220809 16:41:31.648" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.629" endtime="20220809 16:41:31.648"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${res_body}</var>
@@ -1956,178 +1958,178 @@
 <arg>name=${resp_course.json()}[name]</arg>
 <arg>numOfStudent=${resp_course.json()}[numOfStudent]</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220809 16:21:41.324" level="INFO">${res_body} = {'id': 1, 'name': 'Aerospike from zero to hero', 'numOfStudent': 1}</msg>
-<status status="PASS" starttime="20220809 16:21:41.321" endtime="20220809 16:21:41.324"/>
+<msg timestamp="20220809 16:41:31.653" level="INFO">${res_body} = {'id': 2, 'name': 'Aerospike from zero to hero', 'numOfStudent': 1}</msg>
+<status status="PASS" starttime="20220809 16:41:31.649" endtime="20220809 16:41:31.653"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${course1}</arg>
 <arg>numOfStudent=${${res_body}[numOfStudent]-1}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:41.326" endtime="20220809 16:21:41.328"/>
+<status status="PASS" starttime="20220809 16:41:31.656" endtime="20220809 16:41:31.659"/>
 </kw>
 <kw name="Create List" library="BuiltIn">
 <var>@{reCourse_list}</var>
 <doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 16:21:41.329" level="INFO">@{reCourse_list} = [ ]</msg>
-<status status="PASS" starttime="20220809 16:21:41.329" endtime="20220809 16:21:41.329"/>
+<msg timestamp="20220809 16:41:31.660" level="INFO">@{reCourse_list} = [ ]</msg>
+<status status="PASS" starttime="20220809 16:41:31.659" endtime="20220809 16:41:31.660"/>
 </kw>
 <kw name="Set To Dictionary" library="Collections">
 <arg>${student1}</arg>
 <arg>regCourses=@{reCourse_list}</arg>
 <doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<status status="PASS" starttime="20220809 16:21:41.329" endtime="20220809 16:21:41.330"/>
+<status status="PASS" starttime="20220809 16:41:31.660" endtime="20220809 16:41:31.660"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>OK</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.330" endtime="20220809 16:21:41.330"/>
+<status status="PASS" starttime="20220809 16:41:31.661" endtime="20220809 16:41:31.661"/>
 </kw>
 <kw name="Dictionaries Should Be Equal" library="Collections">
 <arg>${resp.json()}</arg>
 <arg>${student1}</arg>
 <doc>Fails if the given dictionaries are not equal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.330" endtime="20220809 16:21:41.331"/>
+<status status="PASS" starttime="20220809 16:41:31.662" endtime="20220809 16:41:31.662"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:41.290" endtime="20220809 16:21:41.332"/>
+<status status="PASS" starttime="20220809 16:41:31.619" endtime="20220809 16:41:31.663"/>
 </test>
-<test id="s1-s3-t12" name="Unregister student to course that already is unregistred" line="161">
+<test id="s1-s3-t12" name="Unregister student to course that already is unregistred" line="160">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/${student1_id}/courses/${course1}[id]</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:41.345" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/1/courses/1 
- path_url=/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.678" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/3/courses/2 
+ path_url=/firstProject/api/students/3/courses/2 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.345" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/1/courses/1 
+<msg timestamp="20220809 16:41:31.679" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/3/courses/2 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '34', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '34', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=the course is already unregistered 
  </msg>
-<msg timestamp="20220809 16:21:41.345" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.333" endtime="20220809 16:21:41.346"/>
+<msg timestamp="20220809 16:41:31.679" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.665" endtime="20220809 16:41:31.679"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.346" endtime="20220809 16:21:41.347"/>
+<status status="PASS" starttime="20220809 16:41:31.681" endtime="20220809 16:41:31.681"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${resp.content}</arg>
 <arg>the course is already unregistered</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220809 16:21:41.347" level="INFO">Argument types are:
+<msg timestamp="20220809 16:41:31.682" level="INFO">Argument types are:
 &lt;class 'bytes'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.347" endtime="20220809 16:21:41.348"/>
+<status status="PASS" starttime="20220809 16:41:31.682" endtime="20220809 16:41:31.682"/>
 </kw>
 <tag>post</tag>
-<status status="PASS" starttime="20220809 16:21:41.333" endtime="20220809 16:21:41.348"/>
+<status status="PASS" starttime="20220809 16:41:31.664" endtime="20220809 16:41:31.683"/>
 </test>
-<test id="s1-s3-t13" name="Unregister student to course wrong student id" line="170">
+<test id="s1-s3-t13" name="Unregister student to course wrong student id" line="169">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/-1/courses/1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:41.360" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
+<msg timestamp="20220809 16:41:31.700" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
  path_url=/firstProject/api/students/-1/courses/1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.361" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
+<msg timestamp="20220809 16:41:31.700" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/-1/courses/1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '24', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '24', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=Student dose not exists! 
  </msg>
-<msg timestamp="20220809 16:21:41.361" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.350" endtime="20220809 16:21:41.361"/>
+<msg timestamp="20220809 16:41:31.700" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.687" endtime="20220809 16:41:31.700"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_str}</var>
 <arg>${resp.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:41.363" level="INFO">${res_str} = Student dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.362" endtime="20220809 16:21:41.363"/>
+<msg timestamp="20220809 16:41:31.703" level="INFO">${res_str} = Student dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.701" endtime="20220809 16:41:31.703"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${expected_str}</var>
 <arg>Student dose not exists!</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:41.365" level="INFO">${expected_str} = Student dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.364" endtime="20220809 16:21:41.365"/>
+<msg timestamp="20220809 16:41:31.706" level="INFO">${expected_str} = Student dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.704" endtime="20220809 16:41:31.706"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.366" endtime="20220809 16:21:41.367"/>
+<status status="PASS" starttime="20220809 16:41:31.708" endtime="20220809 16:41:31.708"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${res_str}</arg>
 <arg>${expected_str}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.367" endtime="20220809 16:21:41.368"/>
+<status status="PASS" starttime="20220809 16:41:31.709" endtime="20220809 16:41:31.709"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:41.349" endtime="20220809 16:21:41.368"/>
+<status status="PASS" starttime="20220809 16:41:31.685" endtime="20220809 16:41:31.709"/>
 </test>
-<test id="s1-s3-t14" name="Unregister student to course wrong course id" line="180">
+<test id="s1-s3-t14" name="Unregister student to course wrong course id" line="179">
 <kw name="DELETE" library="RequestsLibrary">
 <var>${resp}</var>
 <arg>${base_url}/students/1/courses/-1</arg>
 <arg>expected_status=400</arg>
 <doc>Sends a DELETE request.</doc>
-<msg timestamp="20220809 16:21:41.384" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
+<msg timestamp="20220809 16:41:31.727" level="INFO">DELETE Request : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
  path_url=/firstProject/api/students/1/courses/-1 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg timestamp="20220809 16:21:41.384" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
+<msg timestamp="20220809 16:41:31.727" level="INFO">DELETE Response : url=http://localhost:8080/firstProject/api/students/1/courses/-1 
  status=400, reason= 
- headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '23', 'Date': 'Tue, 09 Aug 2022 13:21:40 GMT', 'Connection': 'close'} 
+ headers={'Content-Type': 'text/plain;charset=UTF-8', 'Content-Length': '23', 'Date': 'Tue, 09 Aug 2022 13:41:30 GMT', 'Connection': 'close'} 
  body=Course dose not exists! 
  </msg>
-<msg timestamp="20220809 16:21:41.384" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220809 16:21:41.370" endtime="20220809 16:21:41.384"/>
+<msg timestamp="20220809 16:41:31.727" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<status status="PASS" starttime="20220809 16:41:31.712" endtime="20220809 16:41:31.727"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_str}</var>
 <arg>${resp.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20220809 16:21:41.386" level="INFO">${res_str} = Course dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.385" endtime="20220809 16:21:41.386"/>
+<msg timestamp="20220809 16:41:31.734" level="INFO">${res_str} = Course dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.733" endtime="20220809 16:41:31.735"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${expected_str}</var>
 <arg>Course dose not exists!</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220809 16:21:41.387" level="INFO">${expected_str} = Course dose not exists!</msg>
-<status status="PASS" starttime="20220809 16:21:41.387" endtime="20220809 16:21:41.387"/>
+<msg timestamp="20220809 16:41:31.736" level="INFO">${expected_str} = Course dose not exists!</msg>
+<status status="PASS" starttime="20220809 16:41:31.735" endtime="20220809 16:41:31.738"/>
 </kw>
 <kw name="Status Should Be" library="RequestsLibrary">
 <arg>BAD REQUEST</arg>
 <arg>${resp}</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" starttime="20220809 16:21:41.387" endtime="20220809 16:21:41.388"/>
+<status status="PASS" starttime="20220809 16:41:31.742" endtime="20220809 16:41:31.743"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${res_str}</arg>
 <arg>${expected_str}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220809 16:21:41.388" endtime="20220809 16:21:41.389"/>
+<status status="PASS" starttime="20220809 16:41:31.744" endtime="20220809 16:41:31.744"/>
 </kw>
 <tag>delete</tag>
-<status status="PASS" starttime="20220809 16:21:41.369" endtime="20220809 16:21:41.391"/>
+<status status="PASS" starttime="20220809 16:41:31.711" endtime="20220809 16:41:31.745"/>
 </test>
-<status status="PASS" starttime="20220809 16:21:40.932" endtime="20220809 16:21:41.397"/>
+<status status="PASS" starttime="20220809 16:41:31.366" endtime="20220809 16:41:31.746"/>
 </suite>
-<status status="PASS" starttime="20220809 16:21:39.248" endtime="20220809 16:21:41.400"/>
+<status status="PASS" starttime="20220809 16:41:30.176" endtime="20220809 16:41:31.749"/>
 </suite>
 <statistics>
 <total>

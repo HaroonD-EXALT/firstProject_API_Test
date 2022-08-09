@@ -1,10 +1,10 @@
 *** Settings ***
 Library     RequestsLibrary
 Library     Collections
+Variables    ../Resources/variables.py
 
 
 *** Variables ***
-${base_url}=    http://localhost:8080/firstProject/api
 ${admin1_id}=    ${0}    
 ${admin2_id}=    ${0}
 
@@ -63,7 +63,7 @@ Get All Admins(GET)
     ${status_code}=    Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
 
-    Lists Should Be Equal    @{expected_admin_list}    @{resp_list}
+    List Should Contain Sub List      @{expected_admin_list}    @{resp_list}
 
 
 Get Admin By ID(GET)

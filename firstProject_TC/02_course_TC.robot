@@ -72,11 +72,14 @@ POST New Course (POST) Expect an error (without body)
 Get All Courses(GET)
     [Tags]    get
     ${resp}=    GET    ${base_url}/courses
-    Log To Console    ${resp.status_code}
-    Log To Console    ${resp.content}
+    
+    @{expected_cource_list}=    Create List    ${course1}    ${course2}    
+    @{resp_list}=    Create List    ${resp.content}
+
 
     #Validation
     Status Should Be    OK    ${resp}
+    List Should Contain Sub List      @{expected_cource_list}    @{resp_list}
 
 Get Course By Id (GET)
     [Tags]    get
