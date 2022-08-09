@@ -48,7 +48,6 @@ Get Admin By ID(GET)
     ${res_str}=    Convert To String    ${resp.content}
     ${expected_str}=    Set Variable		something wrong admin not found try again later 
     Should Be Equal    ${res_str}    ${expected_str}
-        # something wrong admin not found try again later 
 
 @Get Admin By Id (GET) InValid ID
     [Tags]    get
@@ -90,7 +89,6 @@ Login (POST)
     ${resp}=    POST    ${base_url}/admins/login    json=${body}    
 
     Status Should Be    OK    ${resp}
-    # Should Be Equal As Strings    Bad Request    ${resp.json()}[error]
 
 
 
@@ -101,7 +99,6 @@ Login (POST) Expect an error (wrong name)
 
     Status Should Be    UNAUTHORIZED    ${resp}
 
-    # Should Be Equal As Strings    Bad Request    ${resp.json()}[error]
 
 
 Login (POST) Expect an error (wrong password)
@@ -111,4 +108,3 @@ Login (POST) Expect an error (wrong password)
 
     Status Should Be    UNAUTHORIZED    ${resp}
 
-    # Should Be Equal As Strings    Bad Request    ${resp.json()}[error]
